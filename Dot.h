@@ -2,23 +2,33 @@
 class Dot
 {
 protected:
-	float x;
-	float y;
+	float x, y;
 
 public:
 	Dot()
 	{
-		x = 0;
-		y = 0;
+		x = y = 0;
 	}
-	float get_x() { return x; }
-	float get_y() { return y; }
+	Dot(float _x, float _y)
+	{
+		x = _x;
+		y = _y;
+	}
+	Dot(const Dot& from_dot)
+	{
+		x = from_dot.x;
+		y = from_dot.y;
+	}
+	~Dot(){}
+
+	float getx() { return x; }
+	void setx(float _x) { x = _x; }
+	float gety() { return y; }
+	void sety(float _y) { y = _y; }
 	virtual void moveTo(float _x, float _y)
 	{
 		x = _x;
 		y = _y;
 	}
-
-
 };
 

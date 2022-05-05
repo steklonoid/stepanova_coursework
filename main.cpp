@@ -6,9 +6,12 @@ using namespace std;
 
 int main()
 {   
-    Dot dot;
-    dot.moveTo(7.5, 20);
-    cout << dot.get_x() << " " << dot.get_y();
+    Dot dot1(5, 6);
+    cout << dot1.getx() << " " << dot1.gety() << "\n";
+    dot1.moveTo(7.5, 20);
+    cout << dot1.getx() << " " << dot1.gety() << "\n";
+    Dot dot2 = dot1;
+    cout << dot2.getx() << " " << dot2.gety() << "\n";
     getch();
     return 0;
 }
