@@ -25,6 +25,7 @@ public:
 	void setx(float _x) { x = _x; }
 	float gety() { return y; }
 	void sety(float _y) { y = _y; }
+
 	virtual void moveTo(float _x, float _y)
 	{
 		x = _x;
