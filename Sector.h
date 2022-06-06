@@ -21,7 +21,6 @@ public:
 	float getb() { return b; }
 	void setb(float _b) { b = _b; }
 
-
 };
 
 
