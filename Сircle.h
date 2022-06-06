@@ -4,15 +4,19 @@
 class Circle: public Dot
 {
 protected:
-	double rad;
+	float rad;
 
 public:
 	Circle()
+	{
+		rad = 0;
+	}
+	Circle(float _x, float _y, float _rad): Dot(_x, _y), rad(_rad)
 	{
 	}
 	~Circle() {}
 
 	float getrad() { return rad; }
-	void setrad(double _rad) { rad = _rad; }
+	void setrad(float _rad) { rad = _rad; }
 };
 
