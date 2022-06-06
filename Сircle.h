@@ -7,10 +7,8 @@ protected:
 	double rad;
 
 public:
-	Circle()
-	{
-	}
-	~Circle() {}
+	Circle(){}
+	~Circle(){}
 
 	float getrad() { return rad; }
 	void setrad(double _rad) { rad = _rad; }

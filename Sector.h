@@ -6,14 +6,8 @@ class Sector
 protected:
 
 public:
-	Sector()
-	{
-	}
-	~Sector()
-
-
-
-
+	Sector(){}
+	~Sector(){}
 };
 
 
