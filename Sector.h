@@ -21,6 +21,15 @@ public:
 	float getb() { return b; }
 	void setb(float _b) { b = _b; }
 
+
+	friend ostream& operator<< (ostream& out, const Dot& dot);
+	friend istream& operator>> (istream& in, Dot& dot);
 };
 
+ostream& operator<< (ostream& out, const Sector& sector)
+{
+	Sector sector1;
+	out << "a: " << sector1.geta() << " b: " << sector1.getb() << "\n";
+	return out;
+}
 

@@ -18,5 +18,14 @@ public:
 
 	float getrad() { return rad; }
 	void setrad(float _rad) { rad = _rad; }
+
+	friend ostream& operator<< (ostream& out, const Circle& dot);
+	friend istream& operator>> (istream& in, Circle& dot);
 };
 
+ostream& operator<< (ostream& out, const Circle& rad)
+{
+	Circle rad1;
+	out << "radius: " << rad1.getrad()  << "\n";
+	return out;
+}

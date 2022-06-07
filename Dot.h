@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 class Dot
 {
 protected:
@@ -37,7 +38,29 @@ public:
 	friend Dot operator - (const Dot& dot1, const Dot& dot2);
 	friend Dot operator / (const Dot& dot, float koef);
 
+	friend ostream& operator<< (ostream& out, const Dot& dot);
+	friend istream& operator>> (istream& in, Dot& dot);
 };
+
+ostream& operator<< (ostream& out, const Dot& dot)
+{
+	Dot dot1;
+	out << "x: " << dot1.getx() << " y: " << dot1.gety() << "\n";
+	return out;
+}
+istream& operator>> (istream& in, Dot& dot)
+{
+	string bebebe;
+	cout << "Enter x: ";
+	getline(in, bebebe);
+	dot.x = stof(bebebe);
+
+	string be;
+	cout << "Enter y: ";
+	getline(in, be);
+	dot.y = stof(be);
+	return in;
+}
 
 Dot operator + (const Dot& dot1, const Dot& dot2)
 {
