@@ -1,5 +1,8 @@
 #pragma once
+#include <iostream>
+#include <string>
 #include "Dot.h"
+using namespace std;
 
 class Circle: public Dot
 {

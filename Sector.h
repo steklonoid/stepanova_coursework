@@ -1,5 +1,8 @@
 #pragma once
+#include <iostream>
+#include <string>
 #include "Ñircle.h"
+using namespace std;
 
 class Sector: public Circle
 {
