@@ -32,7 +32,11 @@ public:
 		y = _y;
 	}
 
-	friend bool operator + (const Dot& x, const Dot& y);
+	friend Dot operator + (const Dot& dot1, const Dot& dot2);
+	friend Dot operator * (const Dot& dot, float koef);
+	friend Dot operator - (const Dot& dot1, const Dot& dot2);
+	friend Dot operator / (const Dot& dot, float koef);
+
 };
 
 Dot operator + (const Dot& dot1, const Dot& dot2)
@@ -40,5 +44,26 @@ Dot operator + (const Dot& dot1, const Dot& dot2)
 	Dot dot3;
 	dot3.x = dot1.x + dot2.x;
 	dot3.y = dot1.y + dot2.y;
+	return dot3;
+}
+Dot operator * (const Dot& dot, float koef)
+{
+	Dot dot1;
+	dot1.x = dot.x * koef;
+	dot1.y = dot.y * koef;
+	return dot1;
+}
+Dot operator / (const Dot& dot, float koef)
+{
+	Dot dot1;
+	dot1.x = dot.x / koef;
+	dot1.x = dot.x / koef;
+	return dot1;
+}
+Dot operator - (const Dot& dot1, const Dot& dot2)
+{
+	Dot dot3;
+	dot3.x = dot1.x - dot2.x;
+	dot3.y = dot1.y - dot2.y;
 	return dot3;
 }

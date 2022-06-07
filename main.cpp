@@ -25,9 +25,13 @@ int main()
     cout << "beta - " << sec1.getb() << endl;
     cout <<"sec1 x -" << sec1.getx() << "\n";
     
-   // Dot dot3;
-    //dot3 = dot1 + dot2;
-    //cout << "dot3 - " << dot3.getx() << " " << dot3.gety() << "\n";
+   Dot dot3;
+   dot3 = dot1 + dot2;
+   cout << "dot3 - " << dot3.getx() << " " << dot3.gety() << "\n";
+   dot3 = dot1 - dot2;
+   cout << "dot3 - " << dot3.getx() << " " << dot3.gety() << "\n";
+   dot3 = dot1 * 5;
+   cout << "dot3 - " << dot3.getx() << " " << dot3.gety() << "\n";
 
     getch();
     
