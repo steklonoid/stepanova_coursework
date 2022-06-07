@@ -43,9 +43,8 @@ public:
 };
 
 ostream& operator<< (ostream& out, const Dot& dot)
-{
-	Dot dot1;
-	out << "x: " << dot1.getx() << " y: " << dot1.gety() << "\n";
+{	
+	out << "x: " << dot.x << " y: " << dot.y << "\n";
 	return out;
 }
 istream& operator>> (istream& in, Dot& dot)
@@ -54,11 +53,10 @@ istream& operator>> (istream& in, Dot& dot)
 	cout << "Enter x: ";
 	getline(in, bebebe);
 	dot.x = stof(bebebe);
-
-	string be;
+	
 	cout << "Enter y: ";
-	getline(in, be);
-	dot.y = stof(be);
+	getline(in, bebebe);
+	dot.y = stof(bebebe);
 	return in;
 }
 
