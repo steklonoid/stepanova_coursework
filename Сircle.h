@@ -1,5 +1,8 @@
 #pragma once
+#include <iostream>
+#include <string>
 #include "Dot.h"
+using namespace std;
 
 class Circle: public Dot
 {
@@ -23,9 +26,27 @@ public:
 	friend istream& operator>> (istream& in, Circle& dot);
 };
 
-ostream& operator<< (ostream& out, const Circle& rad)
-{
-	Circle rad1;
-	out << "radius: " << rad1.getrad()  << "\n";
+ostream& operator<< (ostream& out, const Circle& circle)
+{	
+	out << "x: " << circle.x << " y: " << circle.y << " radius: " << circle.rad << "\n";
 	return out;
+}
+
+istream& operator>> (istream& in, Circle& circle)
+{
+	string bebebe;
+
+	cout << "Enter x: ";
+	getline(in, bebebe);
+	circle.x = stof(bebebe);
+
+	cout << "Enter y: ";
+	getline(in, bebebe);
+	circle.y = stof(bebebe);
+
+	cout << "Enter radius: ";
+	getline(in, bebebe);
+	circle.rad = stof(bebebe);
+
+	return in;
 }

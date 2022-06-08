@@ -17,21 +17,18 @@ int main()
 
     cout << "///////" << endl;
     Circle cir1;
-    cir1.setrad(18);
-    cout << "Rad - " << cir1.getrad() << "\n";
-    cout << "cir1 x - " << cir1.getx() << "\n";
-    Sector sec1(1, 2, 3, 12, 13);
-    cout << "alfa - " << sec1.geta() << endl;
-    cout << "beta - " << sec1.getb() << endl;
-    cout <<"sec1 x -" << sec1.getx() << "\n";
+    cir1.setrad(18);    
+    cout << "cir1 " << cir1 << "\n";
+    Sector sec1(1, 2, 3, 12, 13);    
+    cout <<"sec1 " << sec1 << "\n";
     
    Dot dot3;
    dot3 = dot1 + dot2;
-   cout << "dot3 - " << dot3.getx() << " " << dot3.gety() << "\n";
+   cout << "dot3 - " << dot3 << "\n";
    dot3 = dot1 - dot2;
-   cout << "dot3 - " << dot3.getx() << " " << dot3.gety() << "\n";
+   cout << "dot3 - " << dot3 << "\n";
    dot3 = dot1 * 5;
-   cout << "dot3 - " << dot3.getx() << " " << dot3.gety() << "\n";
+   cout << "dot3 - " << dot3 << "\n";
 
     getch();
     
