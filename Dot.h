@@ -4,7 +4,7 @@
 using namespace std;
 class Dot
 {
-protected:
+protected:	
 	float x, y;
 
 public:

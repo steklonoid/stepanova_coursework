@@ -22,6 +22,12 @@ public:
 	float getrad() { return rad; }
 	void setrad(float _rad) { rad = _rad; }
 
+	virtual void moveTo(float _x, float _y) override
+	{
+		x = _x;
+		y = _y;
+	}
+
 	friend ostream& operator<< (ostream& out, const Circle& dot);
 	friend istream& operator>> (istream& in, Circle& dot);
 };

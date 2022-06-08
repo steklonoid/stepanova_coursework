@@ -24,6 +24,11 @@ public:
 	float getb() { return b; }
 	void setb(float _b) { b = _b; }
 
+	virtual void moveTo(float _x, float _y) override
+	{
+		x = _x;
+		y = _y;
+	}
 
 	friend ostream& operator<< (ostream& out, const Sector& sector);
 	friend istream& operator>> (istream& in, Sector& sector);
