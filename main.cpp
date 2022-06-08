@@ -19,10 +19,8 @@ int main()
     Circle cir1;
     cir1.setrad(18);    
     cout << "cir1 " << cir1 << "\n";
-    Sector sec1(1, 2, 3, 12, 13);
-    cout << "alfa - " << sec1.geta() << endl;
-    cout << "beta - " << sec1.getb() << endl;
-    cout <<"sec1 " << sec1.getx() << "\n";
+    Sector sec1(1, 2, 3, 12, 13);    
+    cout <<"sec1 " << sec1 << "\n";
     
    Dot dot3;
    dot3 = dot1 + dot2;
