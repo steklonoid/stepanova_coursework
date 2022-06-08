@@ -44,7 +44,7 @@ public:
 
 ostream& operator<< (ostream& out, const Dot& dot)
 {	
-	out << "x: " << dot.x << " y: " << dot.y << "\n";
+	out << "x: " << dot. x<< " y: " << dot.y << "\n";
 	return out;
 }
 istream& operator>> (istream& in, Dot& dot)
