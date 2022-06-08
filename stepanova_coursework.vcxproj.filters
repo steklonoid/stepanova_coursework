@@ -23,16 +23,13 @@
     <ClInclude Include="Dot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Сircle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header1.h">
+    <ClInclude Include="Sector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sector.h">
+    <ClInclude Include="Figura.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

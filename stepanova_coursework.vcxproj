@@ -112,8 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dot.h" />
-    <ClInclude Include="Header.h" />
-    <ClInclude Include="Header1.h" />
+    <ClInclude Include="Figura.h" />
     <ClInclude Include="Sector.h" />
     <ClInclude Include="Сircle.h" />
   </ItemGroup>
