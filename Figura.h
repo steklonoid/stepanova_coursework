@@ -7,6 +7,6 @@ using namespace std;
 class Figura
 {
 protected:
-	vector circles;
+	int* circles;
 };
 
