@@ -2,22 +2,138 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iterator>
 #include "Dot.h"
 #include "Ñircle.h"
 #include "Sector.h"
 using namespace std;
-class DotArray
+
+template <class T>
+class FigIterator;
+
+template <class T>
+class Fig
 {
-protected:
-	vector <Dot> dots;
+private:
+	T* arr;
+	int size;
+public:
+	Fig() :arr(new T[0]), size(0) {}
+	Fig(const Fig& fig)
+	{
+		delete arr;
+		size = fig.size;
+		arr = new T[size];
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = fig.arr[i];
+		}
+	}
+	~Fig()
+	{
+		delete[] arr;
+	}
+
+	FigIterator <T> begin()
+	{
+		return FigIterator<T>(arr);
+	}
+	FigIterator <T> end()
+	{
+		return FigIterator<T>(arr + size);
+	}
+	T& operator [](int index)
+	{
+		return arr[index];
+	}
+	const T& operator [](int index) const
+	{
+		return arr[index];
+	}
+	int sizearr() const
+	{
+		return size;
+	}
+	void addEl(T el)
+	{				
+		T* newarr = new T[size + 1];
+		for (int i = 0; i < size; i++)
+		{
+			newarr[i] = arr[i];
+		}
+		newarr[i] = el;
+		delete[] arr;
+		arr = newarr;
+		size++;
+	}
+	void removeEl(int index)
+	{	
+		if (index < size && size > 0)
+		{
+			int j = 0;
+			T* newarr = new T[size - 1];
+			for (int i = 0; i < size; i++)
+			{	
+				if (i != index)
+				{
+					newarr[j] = arr[i];
+					j++;
+				}				
+			}			
+			delete[] arr;
+			arr = newarr;
+			size--;
+		}
+	}
+	void removeAll()
+	{
+		delete[] arr;
+		size = 0;
+	}
 };
-class CircleArray
+
+template<class T>
+class FigIterator
 {
-protected:
-	vector <Circle> circles;
-};
-class SectorArray
-{
-protected:
-	vector <Sector> sectors;
+private:
+	T* current;
+public:
+	FigIterator(T* curr) :current(curr)
+	{
+	}
+	FigIterator& operator =(const FigIterator& other)
+	{
+		if (this != &other)
+		{
+			current = other.current;
+		}
+		return *this;
+	}
+	FigIterator& operator ++()
+	{
+		++current;
+		return *this;
+	}
+	FigIterator operator ++(int i)
+	{
+		Iterator tmp(current);
+		++current;
+		return tmp;
+	}
+	T& operator *()
+	{
+		return *current;
+	}
+	T* operator ->()
+	{
+		return current;
+	}
+	bool operator ==(const FigIterator& other)
+	{
+		return current == other.current;
+	}
+	bool operator !=(const FigIterator& other)
+	{
+		return !(*this == other);
+	}
 };
