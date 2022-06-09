@@ -14,7 +14,7 @@ void menu2(T1& cont, T2& el, T3& iter, string name)
     do {
         system("cls");
         cout << "----------------------------------------\n";
-        cout << "1. Add " << name << "\n2.Show all " << name << "s\n3.Delete " << name << " by index\n4.Delete all " << name << "s\n5.Previous menu\n";
+        cout << "1.Add " << name << "\n2.Show all " << name << "s\n3.Delete " << name << " by index\n4.Delete all " << name << "s\n5.Previous menu\n";
         cout << "----------------------------------------\n";        
         cin >> j;
         switch (j)
