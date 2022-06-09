@@ -1,16 +1,23 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include<vector>
+#include <vector>
 #include "Dot.h"
 #include "Ñircle.h"
+#include "Sector.h"
 using namespace std;
-class Figura
+class DotArray
+{
+protected:
+	vector <Dot> dots;
+};
+class CircleArray
 {
 protected:
 	vector <Circle> circles;
-
-public:
-	
 };
-
+class SectorArray
+{
+protected:
+	int* circles;
+};
