@@ -88,10 +88,10 @@ int main()
             menu2<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, "dot");
             break;
         case 2:
-            menu2(circles, circle, circleiter, "circle");
+            menu2<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, "circle");
             break;
         case 3:
-            menu2(sectors, sector, sectoriter, "sector");
+            menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, "sector");
             break;
         case 4:
             break;
