@@ -3,10 +3,14 @@
 #include <string>
 #include<vector>
 #include "Dot.h"
+#include "Ñircle.h"
 using namespace std;
 class Figura
 {
 protected:
-	int* circles;
+	vector <Circle> circles;
+
+public:
+	
 };
 
