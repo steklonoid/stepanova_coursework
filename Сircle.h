@@ -39,20 +39,12 @@ ostream& operator<< (ostream& out, const Circle& circle)
 }
 
 istream& operator>> (istream& in, Circle& circle)
-{
-	string bebebe;
-
+{	
 	cout << "Enter x: ";
-	getline(in, bebebe);
-	circle.x = stof(bebebe);
-
+	cin >>	circle.x;
 	cout << "Enter y: ";
-	getline(in, bebebe);
-	circle.y = stof(bebebe);
-
+	cin >> circle.y;
 	cout << "Enter radius: ";
-	getline(in, bebebe);
-	circle.rad = stof(bebebe);
-
+	cin >> circle.rad;
 	return in;
 }
