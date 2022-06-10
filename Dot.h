@@ -50,17 +50,11 @@ ostream& operator<< (ostream& out, const Dot& dot)
 	return out;
 }
 istream& operator>> (istream& in, Dot& dot)
-{
-	string bebebe;
-
+{	
 	cout << "Enter x: ";
-	getline(in, bebebe);
-	dot.x = stof(bebebe);
-	
-	cout << "Enter y: ";
-	getline(in, bebebe);
-	dot.y = stof(bebebe);
-
+	cin >> dot.x;	
+	cout << "Enter y: ";	
+	cin >> dot.y;
 	return in;
 }
 

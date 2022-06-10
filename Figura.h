@@ -55,8 +55,9 @@ public:
 	}
 	void addEl(T el)
 	{				
+		int i = 0;
 		T* newarr = new T[size + 1];
-		for (int i = 0; i < size; i++)
+		for (i = 0; i < size; i++)
 		{
 			newarr[i] = arr[i];
 		}
@@ -87,6 +88,7 @@ public:
 	void removeAll()
 	{
 		delete[] arr;
+		arr = new T[0];
 		size = 0;
 	}
 };
@@ -115,7 +117,7 @@ public:
 	}
 	FigIterator operator ++(int i)
 	{
-		Iterator tmp(current);
+		FigIterator tmp(current);
 		++current;
 		return tmp;
 	}

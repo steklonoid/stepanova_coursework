@@ -40,29 +40,17 @@ ostream& operator<< (ostream& out, const Sector& sector)
 	return out;
 }
 istream& operator>> (istream& in, Sector& sector)
-{
-	string bebebe;
-
+{	
 	cout << "Enter x: ";
-	getline(in, bebebe);
-	sector.x = stof(bebebe);
-
+	cin >> sector.x;
 	cout << "Enter y: ";
-	getline(in, bebebe);
-	sector.y = stof(bebebe);
-
+	cin >> sector.y;
 	cout << "Enter radius: ";
-	getline(in, bebebe);
-	sector.rad = stof(bebebe);
-
+	cin >> sector.rad;
 	cout << "Enter alpha: ";
-	getline(in, bebebe);
-	sector.a = stof(bebebe);
-
+	cin >> sector.a;
 	cout << "Enter beta: ";
-	getline(in, bebebe);
-	sector.b = stof(bebebe);
-
+	cin >> sector.b;
 	return in;
 }
 
