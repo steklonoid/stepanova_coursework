@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <vector>
 #include <iterator>
 #include "Dot.h"
 #include "Ñircle.h"
