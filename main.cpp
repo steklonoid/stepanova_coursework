@@ -157,10 +157,7 @@ int main()
         default:
             break;
         }
-
     } while (i != 7);
-
-    db.close();
-
+    
     return 0;
 }
