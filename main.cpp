@@ -8,7 +8,7 @@
 using namespace std;
 
 template <typename T1, typename T2, typename T3>
-void menu2(T1& cont, T2& el, T3& iter, string name)
+void menu2(T1& cont, T2& el, T3& iter, string name) //шаблонная функция менюшки
 {   
     int j;
     do {
@@ -21,7 +21,7 @@ void menu2(T1& cont, T2& el, T3& iter, string name)
         {
         case 1:
             cin >> el;
-            cont.addEl(el);
+            cont.addEl(el); //добавляем объект класса в контейнер?
             break;
         case 2:
             if (cont.sizearr() == 0)
@@ -30,28 +30,28 @@ void menu2(T1& cont, T2& el, T3& iter, string name)
             }
             else
             {
-                iter = cont.begin();
-                int counter = 0;
-                while (iter != cont.end())
+                iter = cont.begin(); //ставим итератор на начало контейнера
+                int counter = 0;    
+                while (iter != cont.end()) //пока не дойдем до последнего елемента контейнера
                 {
-                    counter++;
-                    cout << counter << ". " << *iter;
-                    iter++;
+                    counter++;                        //считаем объекты контейнера
+                    cout << counter << ". " << *iter; //тут перегруженная * из класса итератора? и он выводит ссылку на нужный класс дальше запуталась как он инфу про например точки 
+                    iter++;                 
                 }
             }
             getch();
             break;
         case 3:
             int ind;
-            cout << "Enter index less then " << cont.sizearr() << "\n";
+            cout << "Enter index less then " << cont.sizearr() << "\n"; //
             cin >> ind;
             if (ind < cont.sizearr() && ind >= 0)
             {
-                cont.removeEl(ind);
+                cont.removeEl(ind); //метод из класса конт.
             }
             break;
         case 4:
-            cont.removeAll();
+            cont.removeAll(); //метод класса контейнера
             break;
         case 5:
             break;
@@ -62,7 +62,7 @@ void menu2(T1& cont, T2& el, T3& iter, string name)
 }
 
 template <typename T1, typename T2>
-void loaddb(T1& cont, T2& el, string filename)
+void loaddb(T1& cont, T2& el, string filename) //шаблонная функция загрузки данных из файла
 {
     int n;
     fstream db;
@@ -80,7 +80,7 @@ void loaddb(T1& cont, T2& el, string filename)
 }
 
 template <typename T1, typename T2, typename T3>
-void savedb(T1& cont, T2& el, T3& iter, string filename)
+void savedb(T1& cont, T2& el, T3& iter, string filename) //шаблонная функция сохранения данных в файл
 {
     fstream db;
     db.open(filename, ios::out | ios::binary);
@@ -98,7 +98,7 @@ void savedb(T1& cont, T2& el, T3& iter, string filename)
 
 int main()
 {   
-    Dot dot;
+    Dot dot;                                           // обьявление переменных 
     Circle circle;
     Sector sector;
 
@@ -114,41 +114,41 @@ int main()
     string circlesdb = "circles.data";
     string sectorsdb = "sectors.data";
 
-    fstream db;
+    fstream db;                                       //
 
-    loaddb<Fig<Dot>, Dot>(dots, dot, dotsdb);
-    loaddb<Fig<Circle>, Circle>(circles, circle, circlesdb);
-    loaddb<Fig<Sector>, Sector>(sectors, sector, sectorsdb);
+    loaddb<Fig<Dot>, Dot>(dots, dot, dotsdb);               //чтение данных из файлов
+    loaddb<Fig<Circle>, Circle>(circles, circle, circlesdb);//
+    loaddb<Fig<Sector>, Sector>(sectors, sector, sectorsdb);//
 
     int i, n;
     do {
         
-        system("cls");
+        system("cls");                                                                                             //очищаем экран
         cout << "----------------------------------------\n";
-        cout << "1. Dots\n2. Circles\n3. Sectors\n4. Find circle cluster\n5. Summury info\n6. Save DB\n7. Exit\n";
+        cout << "1. Dots\n2. Circles\n3. Sectors\n4. Find circle cluster\n5. Summury info\n6. Save DB\n7. Exit\n"; //вывод меню
         cout << "----------------------------------------\n";
-        cin >> i;
+        cin >> i; 
         switch (i)
         {
         case 1:
-            menu2<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, "dot");
+            menu2<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, "dot");                      //вызов функции вывода и действий подменю
             break;
         case 2:
-            menu2<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, "circle");
+            menu2<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, "circle"); //
             break;
         case 3:
-            menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, "sector");
+            menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, "sector"); //
             break;
         case 4:
             break;
         case 5:
-            cout << dots.sizearr() << " dots\n";
+            cout << dots.sizearr() << " dots\n";      //выводим размер класса контейнера?
             cout << circles.sizearr() << " circles\n";
             cout << sectors.sizearr() << " sectors\n";
             getch();
             break;
         case 6:
-            savedb<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, dotsdb);
+            savedb<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, dotsdb);                      //сохраняем данные в файл
             savedb<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, circlesdb);
             savedb<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, sectorsdb);
             break;
