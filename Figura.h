@@ -7,21 +7,21 @@
 #include "Sector.h"
 using namespace std;
 
-template <class T>
+template <class T> //обЪявляем шаблонный класс итератор?
 class FigIterator;
 
-template <class T>
+template <class T> //шаблонный класс
 class Fig
 {
 private:
 	T* arr;
 	int size;
 public:
-	Fig() :arr(new T[0]), size(0) {}
-	Fig(const Fig& fig)
+	Fig() :arr(new T[0]), size(0) {} //конструктор создает пустой массив
+	Fig(const Fig& fig)              //конструктор с параметрами?
 	{
-		delete arr;
-		size = fig.size;
+		delete arr;       
+		size = fig.size; 
 		arr = new T[size];
 		for (int i = 0; i < size; i++)
 		{
