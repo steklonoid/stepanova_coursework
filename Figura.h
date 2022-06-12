@@ -48,7 +48,7 @@ public:
 	//перегруженные операторы возращают элемент массива с индексом index
 	T& operator [](int index)
 	{
-		return	[index];
+		return	arr[index];
 	}
 	const T& operator [](int index) const
 	{
