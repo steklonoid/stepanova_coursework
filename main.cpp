@@ -104,15 +104,15 @@ template <typename T1, typename T2, typename T3>
 void savedb(T1& cont, T2& el, T3& iter, string filename) //шаблонная функция сохранения данных в файл
 {
     fstream db;
-    db.open(filename, ios::out | ios::binary);
-    int n = cont.sizearr();
-    db.write((char*)&n, sizeof(int));
-    iter = cont.begin();
-    while (iter != cont.end())
+    db.open(filename, ios::out | ios::binary);  //открываем бинарный файл на запись
+    int n = cont.sizearr();                     // получаем размер контейнера
+    db.write((char*)&n, sizeof(int));           //записываем в файл первой записью размер контейнера
+    iter = cont.begin();                        //ставим итератор на начало контейнера
+    while (iter != cont.end())                  //пока итератор не достиг конца контейнера
     {
-        el = *iter;
-        db.write((char*)&el, sizeof(el));
-        iter++;
+        el = *iter;                             //получаем элемент контейнера через перегруженную *
+        db.write((char*)&el, sizeof(el));       //запись элемента в файл
+        iter++;                                  //перегруженная ++ сдвигает итератор
     }
     db.close();
 }
@@ -135,41 +135,42 @@ int main()
     string circlesdb = "circles.data";
     string sectorsdb = "sectors.data";
 
-    fstream db;                                       //
-
-    loaddb<Fig<Dot>, Dot>(dots, dot, dotsdb);               //чтение данных из файлов
-    loaddb<Fig<Circle>, Circle>(circles, circle, circlesdb);//
-    loaddb<Fig<Sector>, Sector>(sectors, sector, sectorsdb);//
+    fstream db;                                       
+    // вызываем шаблонну функцию чтения данных из файла, последовательно для 3 контейнеров
+    loaddb<Fig<Dot>, Dot>(dots, dot, dotsdb);               
+    loaddb<Fig<Circle>, Circle>(circles, circle, circlesdb);
+    loaddb<Fig<Sector>, Sector>(sectors, sector, sectorsdb);
 
     int i, n;
     do {
-        
-        system("cls");                                                                                             //очищаем экран
+        // вывод меню верхнего уровня
+        system("cls");              //очищаем экран
         cout << "----------------------------------------\n";
-        cout << "1. Dots\n2. Circles\n3. Sectors\n4. Find circle cluster\n5. Summury info\n6. Save DB\n7. Exit\n"; //вывод меню
+        cout << "1. Dots\n2. Circles\n3. Sectors\n4. Find circle cluster\n5. Summury info\n6. Save DB\n7. Exit\n"; 
         cout << "----------------------------------------\n";
-        cin >> i; 
+        cin >> i;   //запрос номера пункта меню
         switch (i)
         {
         case 1:
             menu2<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, "dot");                      //вызов функции вывода и действий подменю
             break;
         case 2:
-            menu2<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, "circle"); //
+            menu2<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, "circle"); //вызов функции вывода и действий подменю
             break;
         case 3:
-            menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, "sector"); //
+            menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, "sector"); //вызов функции вывода и действий подменю
             break;
         case 4:
             break;
         case 5:
-            cout << dots.sizearr() << " dots\n";      //выводим размер класса контейнера?
-            cout << circles.sizearr() << " circles\n";
-            cout << sectors.sizearr() << " sectors\n";
+            cout << dots.sizearr() << " dots\n";      //выводим размер контейнера для точек
+            cout << circles.sizearr() << " circles\n";//выводим размер контейнера для кругов
+            cout << sectors.sizearr() << " sectors\n";//выводим размер контейнера для секторов
             getch();
             break;
         case 6:
-            savedb<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, dotsdb);                      //сохраняем данные в файл
+            // вызываем шаблонну функцию записи данных в файл, последовательно для 3 контейнеров
+            savedb<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, dotsdb);                     
             savedb<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, circlesdb);
             savedb<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, sectorsdb);
             break;
