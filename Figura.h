@@ -34,7 +34,7 @@ public:
 	}
 
 	FigIterator <T> begin()
-	{
+	{				
 		return FigIterator<T>(arr);
 	}
 	FigIterator <T> end()
@@ -100,7 +100,7 @@ private:
 	T* current;
 public:
 	FigIterator(T* curr) :current(curr)
-	{
+	{		
 	}
 	FigIterator& operator =(const FigIterator& other)
 	{

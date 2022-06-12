@@ -10,55 +10,76 @@ using namespace std;
 template <typename T1, typename T2, typename T3>
 void menu2(T1& cont, T2& el, T3& iter, string name) //шаблонная функция менюшки
 {   
-    int j;
+    int j, index;
+    float x, y;
+    Dot* p; // объявляем указатель на базовый класс для реализации позднего связывания виртуальной функции moveTo
+
     do {
         system("cls");
-        cout << "----------------------------------------\n";
-        cout << "1.Add " << name << "\n2.Show all " << name << "s\n3.Move " << name << " \n4.Delete " << name << " by index\n4.Delete all " << name << "s\n5.Previous menu\n";
+        cout << "----------------------------------------\n";   // вывод меню
+        cout << "1.Add " << name << "\n2.Show all " << name << "s\n3.Move " << name << " \n4.Delete " << name << " by index\n5.Delete all " << name << "s\n6.Previous menu\n";
         cout << "----------------------------------------\n";        
-        cin >> j;
+        cin >> j;           //запрос номера пункта меню
         switch (j)
         {
         case 1:
-            cin >> el;
-            cont.addEl(el); //добавляем объект класса в контейнер?
+            cin >> el;      // вводим информацию об элементе, используя перегруженный операто ввода >>
+            cont.addEl(el); //добавляем объект класса в контейнер
             break;
         case 2:
-            if (cont.sizearr() == 0)
+            if (cont.sizearr() == 0)    // проверяем размер контейнера, если = 0, выводим сообщение об отсутствии элементов
             {
                 cout << " no any " << name << "s";
             }
             else
             {
-                iter = cont.begin(); //ставим итератор на начало контейнера
-                int counter = 0;    
+                iter = cont.begin(); //ставим итератор на начало контейнера                
+                int counter = 0;     //инициализация переменной для подсчета количества
                 while (iter != cont.end()) //пока не дойдем до последнего елемента контейнера
                 {
                     counter++;                        //считаем объекты контейнера
-                    cout << counter << ". " << *iter; //тут перегруженная * из класса итератора? и он выводит ссылку на нужный класс дальше запуталась как он инфу про например точки 
-                    iter++;                 
+                    cout << counter << ". " << *iter; //перегруженная * из класса итератора возвращает ссылку на текущий элемент контейнера, 
+                                                      //вывод элемента осуществляется через перегруженный оператор вывода <<
+                    iter++;                           //перегруженная ++ сдвигает итератор  
                 }
             }
-            getch();
+            getch();    
             break;
         case 3:
-            int ind;
-            cout << "Enter index less then " << cont.sizearr() << "\n"; //
-            cin >> ind;
-            if (ind < cont.sizearr() && ind >= 0)
-            {
-                cont.removeEl(ind); //метод из класса конт.
+            cout << "Enter index less then " << cont.sizearr() << "\n"; // запрос индекса элемента в контейнере
+            cin >> index;
+            if (index < cont.sizearr() && index >=0)    //проверка корректности ввода индекса 
+            {                
+                cout << cont[index] << "\n";    // вывод информации об элементе через перегруженный оператор элемента <<, 
+                                                // также используется перегруженный оператор [ ] контейнера
+                cout << "Enter new x: ";        // запрос новой x
+                cin >> x;
+                cout << "Enter new y: ";        // запрос новой y
+                cin >> y;
+                p = &cont[index];               // присваиваем указателю p адрес объекта элемента контейнера
+                p->moveTo(x, y);                // вызов виртуальной функции
+                cout << "Checking:\n";
+                cout << cont[index] << "\n";    //проверочный вывод
+                getch();
             }
             break;
-        case 4:
-            cont.removeAll(); //метод класса контейнера
+        case 4:            
+            cout << "Enter index less then " << cont.sizearr() << "\n"; // запрос индекса элемента в контейнере
+            cin >> index;
+            if (index < cont.sizearr() && index >= 0)   //проверка корректности ввода индекса 
+            {
+                cont.removeEl(index); //метод из класса контейнера
+            }
             break;
         case 5:
+            cont.removeAll(); //метод класса контейнера
+            break;
+        case 6:
             break;
         default:
             break;
         }
-    } while (j != 5);    
+    } while (j != 6);    
 }
 
 template <typename T1, typename T2>
@@ -66,17 +87,17 @@ void loaddb(T1& cont, T2& el, string filename) //шаблонная функция загрузки данн
 {
     int n;
     fstream db;
-    db.open(filename, ios::in | ios::binary);
+    db.open(filename, ios::in | ios::binary);   //открываем бинарный файл на чтение
     if (db)
     {
-        db.read((char*)&n, sizeof(int));        
-        for (int i = 0; i < n; i++)
+        db.read((char*)&n, sizeof(int));        //читаем из файла в переменную n первую запись - количество записанных объектов
+        for (int i = 0; i < n; i++)             // в цикле n раз 
         {
-            db.read((char*)&el, sizeof(el));
-            cont.addEl(el);
+            db.read((char*)&el, sizeof(el));    //читаем из файла в переменную el записанные объекты
+            cont.addEl(el);                     //добавляем в контейнер
         }
     }
-    db.close();    
+    db.close();                                 //закрываем файл
 }
 
 template <typename T1, typename T2, typename T3>
