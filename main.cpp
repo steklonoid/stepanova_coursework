@@ -120,7 +120,7 @@ void savedb(T1& cont, T2& el, T3& iter, string filename) //шаблонная функция сох
 int main()
 {   
     Dot dot;                                           // обьявление переменных 
-    Circle circle;
+    Circle circle;    
     Sector sector;
 
     Fig<Dot> dots;
