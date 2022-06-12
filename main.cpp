@@ -68,7 +68,7 @@ void menu2(T1& cont, T2& el, T3& iter, string name) //шаблонная функция менюшки
             cin >> index;
             if (index < cont.sizearr() && index >= 0)   //проверка корректности ввода индекса 
             {
-                cont.removeEl(index); //метод из класса контейнера
+                cont.removeEl(index); //метод класса контейнера
             }
             break;
         case 5:
@@ -119,7 +119,8 @@ void savedb(T1& cont, T2& el, T3& iter, string filename) //шаблонная функция сох
 
 int main()
 {   
-    Dot dot;                                           // обьявление переменных 
+    // обьявление переменных
+    Dot dot;                                            
     Circle circle;    
     Sector sector;
 
@@ -152,13 +153,13 @@ int main()
         switch (i)
         {
         case 1:
-            menu2<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, "dot");                      //вызов функции вывода и действий подменю
+            menu2<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, "dot");                      //вызов функции вывода и действий подменю для точек
             break;
         case 2:
-            menu2<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, "circle"); //вызов функции вывода и действий подменю
+            menu2<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, "circle"); //вызов функции вывода и действий подменю для кругов
             break;
         case 3:
-            menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, "sector"); //вызов функции вывода и действий подменю
+            menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, "sector"); //вызов функции вывода и действий подменю для секторов
             break;
         case 4:
             break;
