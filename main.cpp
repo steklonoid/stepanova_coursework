@@ -46,10 +46,11 @@ void menu2(T1& cont, T2& el, T3& iter, string name) //шаблонная функция менюшки
             getch();    
             break;
         case 3:
-            cout << "Enter index less then " << cont.sizearr() << "\n"; // запрос индекса элемента в контейнере
+            cout << "Enter index less then " << cont.sizearr()+1 << "\n"; // запрос индекса элемента в контейнере
             cin >> index;
+            index--;
             if (index < cont.sizearr() && index >=0)    //проверка корректности ввода индекса 
-            {                
+            {           
                 cout << cont[index] << "\n";    // вывод информации об элементе через перегруженный оператор элемента <<, 
                                                 // также используется перегруженный оператор [ ] контейнера
                 cout << "Enter new x: ";        // запрос новой x
