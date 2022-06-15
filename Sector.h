@@ -31,9 +31,19 @@ public:
 		y = _y;
 	}
 	//перегруженные операторы
+	friend bool operator == (const Sector& sector1, const Sector& sector2);
+	friend bool operator != (const Sector& sector1, const Sector& sector2);
 	friend ostream& operator<< (ostream& out, const Sector& sector);
 	friend istream& operator>> (istream& in, Sector& sector);
 };
+bool operator == (const Sector& sector1, const Sector& sector2)
+{
+	return sector1.x == sector2.x && sector1.y == sector2.y && sector1.rad == sector2.rad && sector1.a == sector2.a && sector1.b == sector2.b;
+}
+bool operator != (const Sector& sector1, const Sector& sector2)
+{
+	return !(sector1 == sector2);
+}
 //перегруженный оператор вывода
 ostream& operator<< (ostream& out, const Sector& sector)
 {	

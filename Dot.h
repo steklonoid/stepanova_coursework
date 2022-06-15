@@ -39,6 +39,8 @@ public:
 	friend Dot operator * (const Dot& dot, float koef);
 	friend Dot operator - (const Dot& dot1, const Dot& dot2);
 	friend Dot operator / (const Dot& dot, float koef);
+	friend bool operator == (const Dot& dot1, const Dot& dot2);
+	friend bool operator != (const Dot& dot1, const Dot& dot2);
 	friend ostream& operator<< (ostream& out, const Dot& dot);
 	friend istream& operator>> (istream& in, Dot& dot);
 };
@@ -91,4 +93,13 @@ Dot operator - (const Dot& dot1, const Dot& dot2)
 	dot3.x = dot1.x - dot2.x;
 	dot3.y = dot1.y - dot2.y;
 	return dot3;
+}
+//перегруженные операторы сравнения
+bool operator == (const Dot& dot1, const Dot& dot2)
+{	
+	return dot1.x == dot2.x && dot1.y == dot2.y;
+}
+bool operator != (const Dot& dot1, const Dot& dot2)
+{
+	return !(dot1 == dot2);
 }
