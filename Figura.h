@@ -18,7 +18,7 @@ private:
 	int size;//свойство класса - размер массива	
 public:
 	// конструктор по умолчанию: инициализирует пустой массив, размер устанавливает в 0
-	Fig() :arr(new T[0]), size(0), allowCopyEl(false) {}
+	Fig() :arr(new T[0]), size(0) {}
 	// конструктор копирования
 	Fig(const Fig& fig)       
 	{
@@ -49,8 +49,7 @@ public:
 	Fig& operator =(const Fig& fig)
 	{
 		delete[] arr; //удаляем текущий массив
-		size = fig.size; //копируем размер
-		allowCopyEl = fig.allowCopyEl;
+		size = fig.size; //копируем размер		
 		arr = new T[size]; //создаем массив с размером size
 		for (int i = 0; i < size; i++) //поэлементвно копируем элементы масссива
 		{
