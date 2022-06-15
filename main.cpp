@@ -135,70 +135,70 @@ void find_clusters(Fig<Circle>& circles)
     Fig<Circle> second_wave; 
 
     int i, j;
-    free_circles = circles;
+    free_circles = circles; //круги, которые еще не в кластерах - изначально все
     while (true)
     {
-        if (free_circles.sizearr() != 0)
+        if (free_circles.sizearr() != 0)    // если остались еще круги не в кластерах
         {
-            first_wave.removeAll();
-            first_wave.addEl(free_circles[0]);
-            vector<Circle> cluster;
-            cluster.push_back(free_circles[0]);
-            free_circles.removeByIndex(0);
-            second_wave.removeAll();
+            vector<Circle> cluster;             // инициализируем новый кластер
+            cluster.push_back(free_circles[0]); // добавляем в него первый свободный круг
+            first_wave.removeAll();             //  очищаем вспомогательный массив 1
+            first_wave.addEl(free_circles[0]);  // добавляем в него этот же свободный круг            
+            free_circles.removeByIndex(0);      // т.к. круг включили в кластер, исключаем его из массива свободных кругов
             while (true)
             {
-                FigIterator<Circle> iter1 = first_wave.begin();
+                FigIterator<Circle> iter1 = first_wave.begin(); //инициализация итератора для прохода по массиву 1
                 while (iter1 != first_wave.end())
                 {
-                    Circle c1 = *iter1;
-                    FigIterator<Circle> iter2 = circles.begin();
+                    Circle c1 = *iter1;                         // текущий круг из массива 1
+                    FigIterator<Circle> iter2 = circles.begin();// инициализация итератора для прохода по всем кругам
                     while (iter2 != circles.end())
                     {
-                        Circle c2 = *iter2;
-                        if (free_circles.consist(c2))
+                        Circle c2 = *iter2;                     //текущий круг из массива всех кругов
+                        if (free_circles.consist(c2))           // если с2 свободен (еще не в кластере)...
                         {
-                            if (intersect(c1, c2))
+                            if (intersect(c1, c2))              //...проверяем его пересечение с кругом с1 из массива 1
                             {
-                                second_wave.addEl(c2);
-                                free_circles.removeEl(c2);
+                                second_wave.addEl(c2);          //если пересекается, добавляем его в массив 2
+                                free_circles.removeEl(c2);      //исключаем из массива свободных кругов
                             }
                         }
                         iter2++;
                     }
                     iter1++;
                 }
-                if (second_wave.sizearr() == 0)
+                if (second_wave.sizearr() == 0)                 // если не нашли кругов с которыми пересекаются круги из массива 1
                 {
-                    break;
+                    break;                                      // прерываем - кластер заполнен
                 }
                 else
                 {
-                    first_wave = second_wave;
-                    FigIterator<Circle> iter = second_wave.begin();
+                    first_wave = second_wave;                   // второй массив становится первым - в след. проходе цикла будем искать
+                                                                // пересечения уже с кругами из этого массива
+                    FigIterator<Circle> iter = second_wave.begin(); // и добавляем все круги из второго массива в кластер
                     while (iter != second_wave.end())
                     {
                         Circle c = *iter;
                         cluster.push_back(c);
                         iter++;
                     }
-                    second_wave.removeAll();
+                    second_wave.removeAll();                    //для след прохода цикла очищаем массив 2
                 }
             }
-            clusters.push_back(cluster);
+            clusters.push_back(cluster);                        // добавляем кластер в массив кластеров
         }
         else
         {
-            break;
+            break;                                              // если кругов среди свободных не осталось - все круги перебрали - выходим
         }
     }
-
+    // вывод информации о кластерах
     for (i = 0; i < clusters.size(); i++)
     {
         cout << "Cluster " << i << ".\n";
         for (j = 0; j < clusters[i].size(); j++)
         {
-            cout << "   " << clusters[i][j] << "\n";
+            cout << "   " << clusters[i][j] << "";
         }
     }
 }
