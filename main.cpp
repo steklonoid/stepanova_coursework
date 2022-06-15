@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <cmath>
 #include <conio.h>
 #include "Dot.h"
 #include "Сircle.h"
@@ -69,7 +71,7 @@ void menu2(T1& cont, T2& el, T3& iter, string name) //шаблонная функция менюшки
             cin >> index;
             if (index < cont.sizearr() && index >= 0)   //проверка корректности ввода индекса 
             {
-                cont.removeEl(index); //метод класса контейнера
+                cont.removeByIndex(index); //метод класса контейнера
             }
             break;
         case 5:
@@ -113,13 +115,97 @@ void savedb(T1& cont, T2& el, T3& iter, string filename) //шаблонная функция сох
     {
         el = *iter;                             //получаем элемент контейнера через перегруженную *
         db.write((char*)&el, sizeof(el));       //запись элемента в файл
-        iter++;                                  //перегруженная ++ сдвигает итератор
+        iter++;                                 //перегруженная ++ сдвигает итератор
     }
     db.close();
 }
 
+bool intersect(Circle c1, Circle c2)
+{
+    float dist = sqrt(pow((c2.getx() - c1.getx()), 2) + pow((c2.gety() - c1.gety()), 2));
+    float sumrad = c1.getrad() + c2.getrad();
+    return dist <= sumrad;
+}
+
+void find_clusters(Fig<Circle>& circles)
+{
+    // инициализация переменных
+    vector<vector<Circle>> clusters;
+    Fig<Circle> free_circles;
+    Fig<Circle> first_wave;
+    Fig<Circle> second_wave; 
+
+    int i, j;
+    free_circles = circles; //круги, которые еще не в кластерах - изначально все
+    while (true)
+    {
+        if (free_circles.sizearr() != 0)    // если остались еще круги не в кластерах
+        {
+            vector<Circle> cluster;             // инициализируем новый кластер
+            cluster.push_back(free_circles[0]); // добавляем в него первый свободный круг
+            first_wave.removeAll();             //  очищаем вспомогательный массив 1
+            first_wave.addEl(free_circles[0]);  // добавляем в него этот же свободный круг            
+            free_circles.removeByIndex(0);      // т.к. круг включили в кластер, исключаем его из массива свободных кругов
+            while (true)
+            {
+                FigIterator<Circle> iter1 = first_wave.begin(); //инициализация итератора для прохода по массиву 1
+                while (iter1 != first_wave.end())
+                {
+                    Circle c1 = *iter1;                         // текущий круг из массива 1
+                    FigIterator<Circle> iter2 = circles.begin();// инициализация итератора для прохода по всем кругам
+                    while (iter2 != circles.end())
+                    {
+                        Circle c2 = *iter2;                     //текущий круг из массива всех кругов
+                        if (free_circles.consist(c2))           // если с2 свободен (еще не в кластере)...
+                        {
+                            if (intersect(c1, c2))              //...проверяем его пересечение с кругом с1 из массива 1
+                            {
+                                second_wave.addEl(c2);          //если пересекается, добавляем его в массив 2
+                                free_circles.removeEl(c2);      //исключаем из массива свободных кругов
+                            }
+                        }
+                        iter2++;
+                    }
+                    iter1++;
+                }
+                if (second_wave.sizearr() == 0)                 // если не нашли кругов с которыми пересекаются круги из массива 1
+                {
+                    break;                                      // прерываем - кластер заполнен
+                }
+                else
+                {
+                    first_wave = second_wave;                   // второй массив становится первым - в след. проходе цикла будем искать
+                                                                // пересечения уже с кругами из этого массива
+                    FigIterator<Circle> iter = second_wave.begin(); // и добавляем все круги из второго массива в кластер
+                    while (iter != second_wave.end())
+                    {
+                        Circle c = *iter;
+                        cluster.push_back(c);
+                        iter++;
+                    }
+                    second_wave.removeAll();                    //для след прохода цикла очищаем массив 2
+                }
+            }
+            clusters.push_back(cluster);                        // добавляем кластер в массив кластеров
+        }
+        else
+        {
+            break;                                              // если кругов среди свободных не осталось - все круги перебрали - выходим
+        }
+    }
+    // вывод информации о кластерах
+    for (i = 0; i < clusters.size(); i++)
+    {
+        cout << "Cluster " << i << ".\n";
+        for (j = 0; j < clusters[i].size(); j++)
+        {
+            cout << "   " << clusters[i][j] << "";
+        }
+    }
+}
+
 int main()
-{   
+{    
     // обьявление переменных
     Dot dot;                                            
     Circle circle;    
@@ -137,13 +223,16 @@ int main()
     string circlesdb = "circles.data";
     string sectorsdb = "sectors.data";
 
-    fstream db;                                       
+    fstream db;           
+
+       
+
     // вызываем шаблонну функцию чтения данных из файла, последовательно для 3 контейнеров
     loaddb<Fig<Dot>, Dot>(dots, dot, dotsdb);               
     loaddb<Fig<Circle>, Circle>(circles, circle, circlesdb);
     loaddb<Fig<Sector>, Sector>(sectors, sector, sectorsdb);
 
-    int i, n;
+    int i, j, n;    
     do {
         // вывод меню верхнего уровня
         system("cls");              //очищаем экран
@@ -163,11 +252,13 @@ int main()
             menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, "sector"); //вызов функции вывода и действий подменю для секторов
             break;
         case 4:
+            find_clusters(circles);             // вызов функции поиска кластера пересекающихся окружностей            
+            getch();
             break;
         case 5:
-            cout << dots.sizearr() << " dots\n";      //выводим размер контейнера для точек
-            cout << circles.sizearr() << " circles\n";//выводим размер контейнера для кругов
-            cout << sectors.sizearr() << " sectors\n";//выводим размер контейнера для секторов
+            cout << dots.sizearr() << " dots\n";        //выводим размер контейнера для точек
+            cout << circles.sizearr() << " circles\n";  //выводим размер контейнера для кругов
+            cout << sectors.sizearr() << " sectors\n";  //выводим размер контейнера для секторов
             getch();
             break;
         case 6:

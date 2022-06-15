@@ -29,9 +29,20 @@ public:
 		y = _y;
 	}
 	// перегруженные операторы
+	friend bool operator == (const Circle& circle1, const Circle& circle2);
+	friend bool operator != (const Circle& circle1, const Circle& circle2);
 	friend ostream& operator<< (ostream& out, const Circle& dot);
 	friend istream& operator>> (istream& in, Circle& dot);
 };
+//перегруженные операторы сравнения
+bool operator == (const Circle& circle1, const Circle& circle2)
+{
+	return circle1.x == circle2.x && circle1.y == circle2.y && circle1.rad == circle2.rad;
+}
+bool operator != (const Circle& circle1, const Circle& circle2)
+{
+	return !(circle1 == circle2);
+}
 //перегруженны оператор вывода
 ostream& operator<< (ostream& out, const Circle& circle)
 {	
