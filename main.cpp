@@ -119,7 +119,7 @@ void savedb(T1& cont, T2& el, T3& iter, string filename) //шаблонная функция сох
     }
     db.close();
 }
-
+//функция определяет пересекаются ли две окружности
 bool intersect(Circle c1, Circle c2)
 {
     float dist = sqrt(pow((c2.getx() - c1.getx()), 2) + pow((c2.gety() - c1.gety()), 2));
@@ -160,8 +160,7 @@ void find_clusters(Fig<Circle>& circles)
                         {
                             if (intersect(c1, c2))              //...проверяем его пересечение с кругом с1 из массива 1
                             {
-                                second_wave.addEl(c2);          //если пересекается, добавляем его в массив 2
-                                free_circles.removeEl(c2);      //исключаем из массива свободных кругов
+                                second_wave.addEl(c2);          //если пересекается, добавляем его в массив 2                                
                             }
                         }
                         iter2++;
@@ -180,7 +179,8 @@ void find_clusters(Fig<Circle>& circles)
                     while (iter != second_wave.end())
                     {
                         Circle c = *iter;
-                        cluster.push_back(c);
+                        cluster.push_back(c);                   //добавляем в кластер и
+                        free_circles.removeEl(c);               //исключаем из массива свободных кругов
                         iter++;
                     }
                     second_wave.removeAll();                    //для след прохода цикла очищаем массив 2
