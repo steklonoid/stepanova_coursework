@@ -204,6 +204,55 @@ void find_clusters(Fig<Circle>& circles)
     }
 }
 
+//********************************************************************************
+void Test()
+{
+    Dot d1;
+    Dot d2(3, 4);
+    int p;
+    p = d1.getx(); // p=0
+    cout << p << endl;
+    p = d2.getx(); // p=3
+    cout << p << endl;
+
+    // код, который вызывает конструктор копирования
+    Dot d3 = d2;   // инициализация объекта => вызывается конструктор копирования
+    p = d3.getx(); // p=3
+    cout << p << endl;
+
+    Dot* dot = new Dot(1, 2);
+    delete dot;    // вызывается деструктор для объекта dot
+
+    d1.setx(8);
+    d1.sety(9);
+    p = d1.getx();
+    cout << p << endl;
+    p = d1.gety();
+    cout << p << endl;
+
+    d2.moveTo(6, 6);
+    d2.getx();
+    d2.gety();
+
+    cout << d2 << endl; // тестируем перегруженную <<
+    cin >> d1;
+    Dot dot4, dot5;
+    dot4 = d1 + d2;
+    cout << "dot4  = " << dot4 << endl;
+    dot5 = dot4 - d1;
+    cout << "dot5  = " << dot5 << endl;
+    dot4 = d1 * 2;
+    cout << "dot4  = " << dot4 << endl;
+    dot4 = d1 / 2;
+    cout << "dot4  = " << dot4 << endl;
+    if (dot4 == dot5)
+        cout << "dot4 and dot5 are the same.\n";
+
+    if (dot4 != dot5)
+        cout << "dot4 and dot5 are not the same.\n ";
+}
+//********************************************************************************
+
 int main()
 {    
     // обьявление переменных
