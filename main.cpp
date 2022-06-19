@@ -250,6 +250,59 @@ void Test()
 
     if (dot4 != dot5)
         cout << "dot4 and dot5 are not the same.\n ";
+    //////////////////// class circle ////////////////////
+    Circle c1;
+    Circle c2(1, 1, 2);
+    cout << "By default constructor: x= " << c1.getx() << " y= " << c1.gety() << " rad= " << c1.getrad() << endl;
+    cout << "By constructor with parametrs: x= " << c2.getx() << " y= " << c2.gety() << " rad= " << c2.getrad() << endl;
+    Circle* cir = new Circle(3, 3, 3);
+    delete cir; // вызывается деструктор для объекта cir
+
+    int c;
+    c1.setx(12);
+    c1.sety(13);
+    c1.setrad(10);
+    c = c1.getx(); cout <<"c1 x = "<< c << endl;
+    c = c1.gety(); cout << "c1 y = " << c << endl;
+    c = c1.getrad(); cout << "c1 rad = " << c << endl;
+    
+    c1.moveTo(1, 1);
+    cout << c1; // тестируем перегруженную <<
+    cin >> c2;  // тестируем перегруженную >>
+    cout << c2;
+    if (c1 == c2)
+        cout << "c1 and c2 are the same.\n";
+
+    if (c1 != c2)
+        cout << "c1 and c2 are not the same.\n ";
+    //////////////////// class sector ///////////////////////
+    Sector s1;
+    Sector s2(2, 3, 6, 2, 3);
+    cout << "By default constructor: x= " << s1.getx() << " y= " << s1.gety() << " rad= " << s1.getrad() << " a= " << s1.geta()<< " b= " << s1.getb() << endl;
+    cout << "By constructor with parametrs: x= " << s1.getx() << " y= " << s1.gety() << " rad= " << s1.getrad() << " a= " << s1.geta() << " b= " << s1.getb() << endl;
+    Sector* sec = new Sector(1, 1, 1, 1, 1);
+    delete sec; // вызывается деструктор для объекта sec
+
+    int s;
+    s1.setx(44);
+    s1.sety(45);
+    s1.setrad(46);
+    s1.seta(47);
+    s1.setb(48);
+    cout << s1; // тестируем перегруженную <<
+
+    s1.moveTo(88, 6.3);
+    cout << s1.getx() << endl;
+    cout << s1.gety() << endl;
+
+    cin >> s2; // тестируем перегруженную >>
+    cout << s2;
+    if (s1 == s2)
+        cout << "s1 and s2 are the same.\n";
+
+    if (s1 != s2)
+        cout << "s1 and s2 are not the same.\n ";
+    
 }
 //********************************************************************************
 
