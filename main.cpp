@@ -303,57 +303,77 @@ void Autotesting()
     cout << "Перегруженный оператор сравнения != \n<Dot(1, 2) != Dot(1, 3)>\n";
     cout << (Dot(1, 2) != Dot(1, 3) ? "Not equal" : "Equal") << "\n";
     //////////////////// class circle ////////////////////
-    /*Circle c1;
-    Circle c2(1, 1, 2);
-    cout << "By default constructor: x= " << c1.getx() << " y= " << c1.gety() << " rad= " << c1.getrad() << endl;
-    cout << "By constructor with parametrs: x= " << c2.getx() << " y= " << c2.gety() << " rad= " << c2.getrad() << endl;
-    Circle* cir = new Circle(3, 3, 3);
-    delete cir; // вызывается деструктор для объекта cir
-
-    int c;
+    cout << "Тестирование класса Сircle\n";
+    cout << "Конструктор по умолчанию <Circle c1>\n";
+    Circle c1;
+    cout << "Геттеры <c1.getx(), c1.gety(), c1.getrad()>\n";
+    cout << c1.getx()<< endl;
+    cout << c1.gety()<< endl;
+    cout << c1.getrad()<< endl;
+    cout << "Сеттеры <c1.setx(12), c1.sety(13), c1.setrad(10)>\n";
     c1.setx(12);
     c1.sety(13);
     c1.setrad(10);
-    c = c1.getx(); cout <<"c1 x = "<< c << endl;
-    c = c1.gety(); cout << "c1 y = " << c << endl;
-    c = c1.getrad(); cout << "c1 rad = " << c << endl;
-    
-    c1.moveTo(1, 1);
-    cout << c1; // тестируем перегруженную <<
-    cin >> c2;  // тестируем перегруженную >>
-    cout << c2;
-    if (c1 == c2)
-        cout << "c1 and c2 are the same.\n";
-
-    if (c1 != c2)
-        cout << "c1 and c2 are not the same.\n ";
-    //////////////////// class sector ///////////////////////
+    cout << c1.getx() << endl;
+    cout << c1.gety() << endl;
+    cout << c1.getrad() << endl;
+    cout << "Перегруженный оператор вывода <<\n";
+    cout << c1 << "\n";
+    cout << "Перегруженный оператор ввода >>\n";
+    cin >> c1;
+    cout << c1 << "\n";
+    getch();
+    cout << "Конструктор c параметрами <Circle c2(1, 3, 2)>\n";
+    Circle c2(1, 3, 2);
+    cout << c2 << "\n";
+    cout << "Перемещение <moveTo(24, 42)>\n";
+    Circle* p;
+    p = &c2;
+    p->moveTo(24, 42);
+    cout << c2 << "\n";
+    cout << "Перегруженный оператор сравнения == \n<Circle(4, 18, 7) == Circle(4, 18, 7)>\n";
+    cout << (Circle(4, 18, 7) == Circle(4, 18, 7) ? "Equal" : "Not equal") << "\n";
+    cout << "Перегруженный оператор сравнения != \n<Circle(4, 19, 4) != Circle(4, 27, 7)>\n";
+    cout << (Circle(4, 19, 4) != Circle(4, 27, 7) ? "Not equal" : "Equal") << "\n";
+    //////////////////// class Sector ////////////////////
+    cout << "Тестирование класса Sector\n";
+    cout << "Конструктор по умолчанию <Sector s1>\n";
     Sector s1;
-    Sector s2(2, 3, 6, 2, 3);
-    cout << "By default constructor: x= " << s1.getx() << " y= " << s1.gety() << " rad= " << s1.getrad() << " a= " << s1.geta()<< " b= " << s1.getb() << endl;
-    cout << "By constructor with parametrs: x= " << s1.getx() << " y= " << s1.gety() << " rad= " << s1.getrad() << " a= " << s1.geta() << " b= " << s1.getb() << endl;
-    Sector* sec = new Sector(1, 1, 1, 1, 1);
-    delete sec; // вызывается деструктор для объекта sec
-
-    int s;
-    s1.setx(44);
-    s1.sety(45);
-    s1.setrad(46);
-    s1.seta(47);
-    s1.setb(48);
-    cout << s1; // тестируем перегруженную <<
-
-    s1.moveTo(88, 6.3);
+    cout << "Геттеры <s1.getx(), s1.gety(), s1.getrad(), s1.geta(), s1.getb()>\n";
     cout << s1.getx() << endl;
     cout << s1.gety() << endl;
-
-    cin >> s2; // тестируем перегруженную >>
-    cout << s2;
-    if (s1 == s2)
-        cout << "s1 and s2 are the same.\n";
-
-    if (s1 != s2)
-        cout << "s1 and s2 are not the same.\n ";*/
+    cout << s1.getrad() << endl;
+    cout << s1.geta() << endl;
+    cout << s1.getb() << endl;
+    cout << "Сеттеры <s1.setx(92), s1.sety(93), s1.setrad(94), s1.seta(95), s1.setb(96)>\n";
+    s1.setx(92);
+    s1.sety(93);
+    s1.setrad(94);
+    s1.seta(95);
+    s1.setb(96);
+    cout << s1.getx() << endl;
+    cout << s1.gety() << endl;
+    cout << s1.getrad() << endl;
+    cout << s1.geta() << endl;
+    cout << s1.getb() << endl;
+    cout << "Перегруженный оператор вывода <<\n";
+    cout << s1 << "\n";
+    cout << "Перегруженный оператор ввода >>\n";
+    cin >> s1;
+    cout << s1 << "\n";
+    getch();
+    cout << "Конструктор c параметрами <Sector s2(9,8,7,6,5)>\n";
+    Sector s2(9, 8, 7, 6, 5);
+    cout << s2 << "\n";
+    cout << "Перемещение <moveTo(0,0)>\n";
+    Sector* p;
+    p = &c2;
+    p->moveTo(0, 0);
+    cout << c2 << "\n";
+    cout << "Перегруженный оператор сравнения == \n<Sector(2, 12, 42, 3, 3) == Sector(2, 12, 42, 3, 3)>\n";
+    cout << (Sector(2, 12, 42, 3, 3) == Sector(2, 12, 42, 3, 3) ? "Equal" : "Not equal") << "\n";
+    cout << "Перегруженный оператор сравнения != \n<Sector(4, 19, 4) != Sector(4, 27, 7)>\n";
+    cout << (Sector(0, 1, 5, 150, 30) != Sector(0, 0, 7, 150, 30) ? "Not equal" : "Equal") << "\n";
     getch();
 }
 //********************************************************************************
