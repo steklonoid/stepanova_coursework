@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <cmath>
+#include <Windows.h>
 #include <conio.h>
 #include "Dot.h"
 #include "Сircle.h"
@@ -9,8 +10,62 @@
 #include "Figura.h"
 using namespace std;
 
+// глобальная переменная хранит язык интерфейса программы
+int language;
+
+//функция локализации
+string menu_locale(int menu_n, int loc)
+{
+    string res;
+    switch (menu_n)
+    {
+    case 1:
+        switch (loc)
+        {
+        case 1:
+            res = "1. Dots\n2. Circles\n3. Sectors\n4. Find circle cluster\n5. Summury info\n6. Save DB\n7. Autotesting\n8. Exit\n";
+            break;
+        case 2:
+            res = "1. Точки\n2. Круги\n3. Сектора\n4. Найти кластер кругов\n5. Общая информация\n6. Сохранить базу\n7. Автотестирование\n8. Выход\n";
+            break;
+        case 3:
+            res = "1. Точки\n2. Кола\n3. Сектори\n4. Знайти кластер кіл\n5. Загальна інформація\n6. Зберегти базу\n7. Автотестування\n8. Вихід\n";
+            break;
+        }
+        break;
+    case 2:
+        switch (loc)
+        {
+        case 1:
+            res = "1.Add\n2.Show all\n3.Move\n4.Delete by index\n5.Delete all\n6.Previous menu\n";
+            break;
+        case 2:
+            res = "1.Добавить\n2.Показать все\n3.Переместить\n4.Удалить по индексу\n5.Удалить все\n6.Предыдущее меню\n";
+            break;
+        case 3:
+            res = "1.Додати\n2.Показати всі\n3.Перемістити\n4.Видалити за індексом\n5.Видалити всі\n6.Попереднє меню\n";
+            break;
+        }
+        break;
+    case 3:
+        switch (loc)
+        {
+        case 1:
+            res = "no objects";
+            break;
+        case 2:
+            res = "нету объектов";
+            break;
+        case 3:
+            res = "жодного об'єкта";
+            break;
+        }
+    }
+    return res;
+}
+
 template <typename T1, typename T2, typename T3>
-void menu2(T1& cont, T2& el, T3& iter, string name) //шаблонная функция менюшки
+void menu2(T1& cont, T2& el, T3& iter) //шаблонная функция менюшки
 {   
     int j, index;
     float x, y;
@@ -19,7 +74,7 @@ void menu2(T1& cont, T2& el, T3& iter, string name) //шаблонная функция менюшки
     do {
         system("cls");
         cout << "----------------------------------------\n";   // вывод меню
-        cout << "1.Add " << name << "\n2.Show all " << name << "s\n3.Move " << name << " \n4.Delete " << name << " by index\n5.Delete all " << name << "s\n6.Previous menu\n";
+        cout << menu_locale(2, language);
         cout << "----------------------------------------\n";        
         cin >> j;           //запрос номера пункта меню
         switch (j)
@@ -31,7 +86,7 @@ void menu2(T1& cont, T2& el, T3& iter, string name) //шаблонная функция менюшки
         case 2:
             if (cont.sizearr() == 0)    // проверяем размер контейнера, если = 0, выводим сообщение об отсутствии элементов
             {
-                cout << " no any " << name << "s";
+                cout << menu_locale(3, language);
             }
             else
             {
@@ -60,7 +115,7 @@ void menu2(T1& cont, T2& el, T3& iter, string name) //шаблонная функция менюшки
                 cout << "Enter new y: ";        // запрос новой y
                 cin >> y;
                 p = &cont[index];               // присваиваем указателю p адрес объекта элемента контейнера
-                p->moveTo(x, y);                // вызов виртуальной функции
+                p->moveTo(x, y);                // вызов виртуальной функции, через механизм позднего связывания
                 cout << "Checking:\n";
                 cout << cont[index] << "\n";    //проверочный вывод
                 getch();
@@ -205,53 +260,50 @@ void find_clusters(Fig<Circle>& circles)
 }
 
 //********************************************************************************
-void Test()
+void Autotesting()
 {
+    cout << "Тестирование класса Dot\n";
+    cout << "Конструктор по умолчанию <Dot d1>\n";
     Dot d1;
-    Dot d2(3, 4);
-    int p;
-    p = d1.getx(); // p=0
-    cout << p << endl;
-    p = d2.getx(); // p=3
-    cout << p << endl;
-
-    // код, который вызывает конструктор копирования
-    Dot d3 = d2;   // инициализация объекта => вызывается конструктор копирования
-    p = d3.getx(); // p=3
-    cout << p << endl;
-
-    Dot* dot = new Dot(1, 2);
-    delete dot;    // вызывается деструктор для объекта dot
-
+    cout << "Геттеры <d1.getx(), d1.gety()>\n";
+    cout << d1.getx() << endl;
+    cout << d1.gety() << endl;
+    cout << "Сеттеры <d3.setx(8), d3.sety(9)>\n";
     d1.setx(8);
     d1.sety(9);
-    p = d1.getx();
-    cout << p << endl;
-    p = d1.gety();
-    cout << p << endl;
-
-    d2.moveTo(6, 6);
-    d2.getx();
-    d2.gety();
-
-    cout << d2 << endl; // тестируем перегруженную <<
+    cout << d1.getx() << endl;
+    cout << d1.gety() << endl;
+    cout << "Перегруженный оператор вывода <<\n";
+    cout << d1 << "\n";
+    cout << "Перегруженный оператор ввода >>\n";
     cin >> d1;
-    Dot dot4, dot5;
-    dot4 = d1 + d2;
-    cout << "dot4  = " << dot4 << endl;
-    dot5 = dot4 - d1;
-    cout << "dot5  = " << dot5 << endl;
-    dot4 = d1 * 2;
-    cout << "dot4  = " << dot4 << endl;
-    dot4 = d1 / 2;
-    cout << "dot4  = " << dot4 << endl;
-    if (dot4 == dot5)
-        cout << "dot4 and dot5 are the same.\n";
-
-    if (dot4 != dot5)
-        cout << "dot4 and dot5 are not the same.\n ";
+    cout << d1 << "\n";
+    getch();
+    cout << "Конструктор c параметрами <Dot d2(3, 4)>\n";
+    Dot d2(3, 4);
+    cout << d2 << "\n";
+    cout << "Конструктор копирования <Dot d3 = d2;>\n";
+    Dot d3 = d2;
+    cout << d3 << "\n";            
+    cout << "Перемещение <moveTo(11, 12)>\n";
+    Dot* p;
+    p = &d3;               
+    p->moveTo(11, 12);
+    cout << d3 << "\n";
+    cout << "Перегруженный оператор + \n<Dot(7, 3) + Dot(3, 8)>\n";
+    cout << Dot(7, 3) + Dot(3, 8) << "\n";
+    cout << "Перегруженный оператор - \n<Dot(12, 12) - Dot(6, 2)>\n";
+    cout << Dot(12, 12) + Dot(6, 2) << "\n";
+    cout << "Перегруженный оператор * \n<Dot(1, 2) * 10>\n";
+    cout << Dot(1, 2) * 10 << "\n";
+    cout << "Перегруженный оператор / \n<Dot(12, 12) / 4>\n";
+    cout << Dot(12, 12) / 4 << "\n";
+    cout << "Перегруженный оператор сравнения == \n<Dot(1, 2) == Dot(1, 2)>\n";
+    cout << (Dot(1, 2) == Dot(1, 2) ? "Equal" : "Not equal") << "\n";
+    cout << "Перегруженный оператор сравнения != \n<Dot(1, 2) != Dot(1, 3)>\n";
+    cout << (Dot(1, 2) != Dot(1, 3) ? "Not equal" : "Equal") << "\n";
     //////////////////// class circle ////////////////////
-    Circle c1;
+    /*Circle c1;
     Circle c2(1, 1, 2);
     cout << "By default constructor: x= " << c1.getx() << " y= " << c1.gety() << " rad= " << c1.getrad() << endl;
     cout << "By constructor with parametrs: x= " << c2.getx() << " y= " << c2.gety() << " rad= " << c2.getrad() << endl;
@@ -301,8 +353,8 @@ void Test()
         cout << "s1 and s2 are the same.\n";
 
     if (s1 != s2)
-        cout << "s1 and s2 are not the same.\n ";
-    
+        cout << "s1 and s2 are not the same.\n ";*/
+    getch();
 }
 //********************************************************************************
 
@@ -326,32 +378,36 @@ int main()
     string sectorsdb = "sectors.data";
 
     fstream db;           
-
-       
-
+    
     // вызываем шаблонну функцию чтения данных из файла, последовательно для 3 контейнеров
     loaddb<Fig<Dot>, Dot>(dots, dot, dotsdb);               
     loaddb<Fig<Circle>, Circle>(circles, circle, circlesdb);
     loaddb<Fig<Sector>, Sector>(sectors, sector, sectorsdb);
+
+    //меню выбора языка вывода меню
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);    
+    cout << "1. English\n2. Русский \n3. Українська\n";
+    cin >> language;
 
     int i, j, n;    
     do {
         // вывод меню верхнего уровня
         system("cls");              //очищаем экран
         cout << "----------------------------------------\n";
-        cout << "1. Dots\n2. Circles\n3. Sectors\n4. Find circle cluster\n5. Summury info\n6. Save DB\n7. Exit\n"; 
+        cout << menu_locale(1, language);
         cout << "----------------------------------------\n";
         cin >> i;   //запрос номера пункта меню
         switch (i)
         {
         case 1:
-            menu2<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter, "dot");                      //вызов функции вывода и действий подменю для точек
+            menu2<Fig<Dot>, Dot, FigIterator<Dot>>(dots, dot, dotiter);                      //вызов функции вывода и действий подменю для точек
             break;
         case 2:
-            menu2<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, "circle"); //вызов функции вывода и действий подменю для кругов
+            menu2<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter); //вызов функции вывода и действий подменю для кругов
             break;
         case 3:
-            menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, "sector"); //вызов функции вывода и действий подменю для секторов
+            menu2<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter); //вызов функции вывода и действий подменю для секторов
             break;
         case 4:
             find_clusters(circles);             // вызов функции поиска кластера пересекающихся окружностей            
@@ -369,12 +425,15 @@ int main()
             savedb<Fig<Circle>, Circle, FigIterator<Circle>>(circles, circle, circleiter, circlesdb);
             savedb<Fig<Sector>, Sector, FigIterator<Sector>>(sectors, sector, sectoriter, sectorsdb);
             break;
-        case 7:                                    
-            break;        
+        case 7:    
+            Autotesting();
+            break;  
+        case 8:
+            break;
         default:
             break;
         }
-    } while (i != 7);
+    } while (i != 8);
     
     return 0;
 }

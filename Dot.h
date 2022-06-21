@@ -82,7 +82,7 @@ Dot operator / (const Dot& dot, float koef)
 	if (koef != 0)
 	{
 		dot1.x = dot.x / koef;
-		dot1.x = dot.x / koef;
+		dot1.y = dot.y / koef;
 	}
 	return dot1;
 }
