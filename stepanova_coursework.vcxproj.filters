@@ -18,11 +18,11 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Dot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Dot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Сircle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -30,6 +30,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Figura.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

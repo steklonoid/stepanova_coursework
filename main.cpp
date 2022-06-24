@@ -302,14 +302,15 @@ void Autotesting()
     cout << (Dot(1, 2) == Dot(1, 2) ? "Equal" : "Not equal") << "\n";
     cout << "Перегруженный оператор сравнения != \n<Dot(1, 2) != Dot(1, 3)>\n";
     cout << (Dot(1, 2) != Dot(1, 3) ? "Not equal" : "Equal") << "\n";
+    getch();
     //////////////////// class circle ////////////////////
     cout << "Тестирование класса Сircle\n";
     cout << "Конструктор по умолчанию <Circle c1>\n";
     Circle c1;
     cout << "Геттеры <c1.getx(), c1.gety(), c1.getrad()>\n";
-    cout << c1.getx()<< endl;
-    cout << c1.gety()<< endl;
-    cout << c1.getrad()<< endl;
+    cout << c1.getx() << endl;
+    cout << c1.gety() << endl;
+    cout << c1.getrad() << endl;
     cout << "Сеттеры <c1.setx(12), c1.sety(13), c1.setrad(10)>\n";
     c1.setx(12);
     c1.sety(13);
@@ -327,14 +328,15 @@ void Autotesting()
     Circle c2(1, 3, 2);
     cout << c2 << "\n";
     cout << "Перемещение <moveTo(24, 42)>\n";
-    Circle* p;
-    p = &c2;
-    p->moveTo(24, 42);
+    Circle* pc;
+    pc = &c2;
+    pc->moveTo(24, 42);
     cout << c2 << "\n";
     cout << "Перегруженный оператор сравнения == \n<Circle(4, 18, 7) == Circle(4, 18, 7)>\n";
     cout << (Circle(4, 18, 7) == Circle(4, 18, 7) ? "Equal" : "Not equal") << "\n";
     cout << "Перегруженный оператор сравнения != \n<Circle(4, 19, 4) != Circle(4, 27, 7)>\n";
     cout << (Circle(4, 19, 4) != Circle(4, 27, 7) ? "Not equal" : "Equal") << "\n";
+    getch();
     //////////////////// class Sector ////////////////////
     cout << "Тестирование класса Sector\n";
     cout << "Конструктор по умолчанию <Sector s1>\n";
@@ -366,10 +368,10 @@ void Autotesting()
     Sector s2(9, 8, 7, 6, 5);
     cout << s2 << "\n";
     cout << "Перемещение <moveTo(0,0)>\n";
-    Sector* p;
-    p = &c2;
-    p->moveTo(0, 0);
-    cout << c2 << "\n";
+    Sector* ps;
+    ps = &s2;
+    ps->moveTo(0, 0);
+    cout << s2 << "\n";
     cout << "Перегруженный оператор сравнения == \n<Sector(2, 12, 42, 3, 3) == Sector(2, 12, 42, 3, 3)>\n";
     cout << (Sector(2, 12, 42, 3, 3) == Sector(2, 12, 42, 3, 3) ? "Equal" : "Not equal") << "\n";
     cout << "Перегруженный оператор сравнения != \n<Sector(4, 19, 4) != Sector(4, 27, 7)>\n";
