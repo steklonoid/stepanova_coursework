@@ -45,6 +45,9 @@ public:
 	}
 	Fig& operator =(const Fig& fig)
 	{
+		if (this == &fig)// Проверка на самоприсваивание
+			return *this;
+
 		delete[] arr; //удаляем текущий массив
 		size = fig.size; //копируем размер		
 		arr = new T[size]; //создаем массив с размером size

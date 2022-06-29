@@ -103,14 +103,14 @@ void menu2(T1& cont, T2& el, T3& iter) //шаблонная функция менюшки
             getch();    
             break;
         case 3:
-            cout << "Enter index less then " << cont.sizearr()+1 << "\n"; // запрос индекса элемента в контейнере
+            cout << "Enter index less then " << cont.sizearr()+1 << "\n"; // query item index in container
             cin >> index;
             index--;
-            if (index < cont.sizearr() && index >=0)    //проверка корректности ввода индекса 
+            if (index < cont.sizearr() && index >=0)    //index check
             {           
-                cout << cont[index] << "\n";    // вывод информации об элементе через перегруженный оператор элемента <<, 
-                                                // также используется перегруженный оператор [ ] контейнера
-                cout << "Enter new x: ";        // запрос новой x
+                cout << cont[index] << "\n";    // output element information via overloaded element operator <<, 
+                                                // also used overloaded container [ ] operator
+                cout << "Enter new x: ";        // new x query
                 cin >> x;
                 cout << "Enter new y: ";        // запрос новой y
                 cin >> y;
@@ -141,36 +141,36 @@ void menu2(T1& cont, T2& el, T3& iter) //шаблонная функция менюшки
 }
 
 template <typename T1, typename T2>
-void loaddb(T1& cont, T2& el, string filename) //шаблонная функция загрузки данных из файла
+void loaddb(T1& cont, T2& el, string filename) //template function to load data from a file
 {
     int n;
     fstream db;
-    db.open(filename, ios::in | ios::binary);   //открываем бинарный файл на чтение
+    db.open(filename, ios::in | ios::binary);   //open binary file for reading
     if (db)
     {
-        db.read((char*)&n, sizeof(int));        //читаем из файла в переменную n первую запись - количество записанных объектов
-        for (int i = 0; i < n; i++)             // в цикле n раз 
+        db.read((char*)&n, sizeof(int));        //read from file to variable n the first record - the number of recorded objects
+        for (int i = 0; i < n; i++)             //in a cycle n times
         {
-            db.read((char*)&el, sizeof(el));    //читаем из файла в переменную el записанные объекты
-            cont.addEl(el);                     //добавляем в контейнер
+            db.read((char*)&el, sizeof(el));    //read from file to variable el recorded objects
+            cont.addEl(el);                     //add to container
         }
     }
-    db.close();                                 //закрываем файл
+    db.close();                                 //close the file
 }
 
 template <typename T1, typename T2, typename T3>
-void savedb(T1& cont, T2& el, T3& iter, string filename) //шаблонная функция сохранения данных в файл
+void savedb(T1& cont, T2& el, T3& iter, string filename) //template to save data to a file
 {
     fstream db;
-    db.open(filename, ios::out | ios::binary);  //открываем бинарный файл на запись
-    int n = cont.sizearr();                     // получаем размер контейнера
-    db.write((char*)&n, sizeof(int));           //записываем в файл первой записью размер контейнера
-    iter = cont.begin();                        //ставим итератор на начало контейнера
-    while (iter != cont.end())                  //пока итератор не достиг конца контейнера
+    db.open(filename, ios::out | ios::binary);  //open binary file to write
+    int n = cont.sizearr();                     //get the container size
+    db.write((char*)&n, sizeof(int));           //write the container size to the file with the first record
+    iter = cont.begin();                        //put the iterator at the beginning of the container
+    while (iter != cont.end())                  //until the iterator reached the end of the container
     {
-        el = *iter;                             //получаем элемент контейнера через перегруженную *
-        db.write((char*)&el, sizeof(el));       //запись элемента в файл
-        iter++;                                 //перегруженная ++ сдвигает итератор
+        el = *iter;                             //get the container element through the overloaded *
+        db.write((char*)&el, sizeof(el));       //entry of an item into a file
+        iter++;                                 //overloaded ++ shifts the iterator
     }
     db.close();
 }

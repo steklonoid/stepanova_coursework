@@ -23,6 +23,6 @@ public:
 	// перегруженные операторы
 	friend bool operator == (const Circle& circle1, const Circle& circle2);
 	friend bool operator != (const Circle& circle1, const Circle& circle2);
-	friend ostream& operator<< (ostream& out, const Circle& dot);
-	friend istream& operator>> (istream& in, Circle& dot);
+	friend ostream& operator<< (ostream& out, const Circle& circle);
+	friend istream& operator>> (istream& in, Circle& circle);
 };
