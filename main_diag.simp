@@ -33,13 +33,13 @@
       </counter>
       <counter>
         <item-type type-id="drawing-line" type="Line" />
-        <value>3</value>
+        <value>4</value>
       </counter>
     </entity-names>
     <entity-ids>
       <counter>
         <item-type type-id="group" type="Group" />
-        <value>801</value>
+        <value>904</value>
       </counter>
       <counter>
         <item-type type-id="class" type="Class" />
@@ -95,11 +95,15 @@
       </counter>
       <counter>
         <item-type type-id="drawing-line" type="Line" />
-        <value>24</value>
+        <value>30</value>
       </counter>
       <counter>
         <item-type type-id="drawing-polygon-path" type="Polygon Path" />
         <value>15</value>
+      </counter>
+      <counter>
+        <item-type type-id="comment-connector" type="Comment Connector" />
+        <value>5</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -278,25 +282,29 @@
           <version />
         </meta>
         <abstract-items>
-          <item id="e9014a3b1ca94de1a32f0ea70c1aa600" cid="GNR004" type="generalization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:42:02" from="1943fc881b7f43739b28ad8a6f324814" to="5815bdb751c44f2b87471468c9a48ad7" visibility="package" />
-          <item id="8e5fb6ea124448b2ab2ae0a5426ee8de" cid="PROP006" type="property" name="x" style-class="" owner="8ccc5521612443f8b5845d14203a9904" creation-date="05/16/2022 16:35:09" visibility="private">
+          <item id="7ab744605fa4411ba6cdaa2920317abb" cid="GNR006" type="generalization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:48:00" from="2dd1012e221a4f2a849aaa724b70b191" to="5815bdb751c44f2b87471468c9a48ad7" visibility="package" />
+          <item id="0e83a3c20f2d4f8e9669d7e2c5479965" cid="PROP013" type="property" name="Circles" style-class="" owner="44da507e23194de08f86ac14e5c6c720" creation-date="05/16/2022 16:46:00" visibility="private">
+            <feature />
+            <structural-feature type="" type-id="" />
+            <property>
+              <source-codes>
+                <source-code language="" uid="scs-8d375b91-e691-4fef-bfa5-b01981611766" />
+              </source-codes>
+            </property>
+          </item>
+          <item id="4812a9ec525b460ab795d2872774a651" cid="PROP010" type="property" name="value_angle" style-class="" owner="8ccc5521612443f8b5845d14203a9904" creation-date="05/16/2022 16:35:39" visibility="private">
             <feature />
             <structural-feature type="" type-id="" />
             <property />
-          </item>
-          <item id="2dd1012e221a4f2a849aaa724b70b191" cid="C008" type="class" name="CircleArray" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:48:00" visibility="undefined">
-            <owned-items>
-              <owned-item ref="e6502f5b5c7b4a6dab53100cd0f0c75d" />
-            </owned-items>
-            <attributes>
-              <attribute id="a2aec27873587411c8a9f11a155608271603" cid="PROP018" name="Circles" creation-date="05/16/2022 16:48:11" property-ref="e6502f5b5c7b4a6dab53100cd0f0c75d" />
-            </attributes>
           </item>
           <item id="5815bdb751c44f2b87471468c9a48ad7" cid="C004" type="class" name="Circle" style-class="" change-tracking-state="added" creation-date="05/16/2022 15:13:56" visibility="undefined">
             <owned-items>
               <owned-item ref="4ef1ce3fb980427bb1c5966a5cd0b2df" />
               <owned-item ref="8e1afbae9c104af5a6e4bd1c542703c9" />
               <owned-item ref="6bb82812a68046279261ae784d537ce8" />
+              <owned-item ref="8e1afbae9c104af5a6e4bd1c542703c9" />
+              <owned-item ref="6bb82812a68046279261ae784d537ce8" />
+              <owned-item ref="4ef1ce3fb980427bb1c5966a5cd0b2df" />
               <owned-item ref="8e1afbae9c104af5a6e4bd1c542703c9" />
               <owned-item ref="6bb82812a68046279261ae784d537ce8" />
               <owned-item ref="4ef1ce3fb980427bb1c5966a5cd0b2df" />
@@ -386,32 +394,37 @@
               <source-code language="ActionScript" />
             </source-codes>
           </item>
-          <item id="33dde7eb20ff4a5c8d533e5502a4b3d4" cid="C003" type="class" name="CIRCLE" style-class="" change-tracking-state="added" creation-date="05/16/2022 15:11:36" visibility="undefined">
-            <owned-items>
-              <owned-item ref="5b6d40497c9a485eb72ba173671be1a1" />
-            </owned-items>
-          </item>
-          <item id="de1fba6c13bc4d12bcd8774cadeff8cf" cid="PROP001" type="property" name="x" style-class="" owner="3be9ef5c3c8941568b16dd5c379b7d82" creation-date="05/16/2022 14:54:21" visibility="private">
+          <item id="e50fdebfdc6e4c92b8b681f44c63cfab" cid="PROP007" type="property" name="y" style-class="" owner="8ccc5521612443f8b5845d14203a9904" creation-date="05/16/2022 16:35:13" visibility="private">
             <feature />
             <structural-feature type="" type-id="" />
             <property />
           </item>
+          <item id="2dd1012e221a4f2a849aaa724b70b191" cid="C008" type="class" name="CircleArray" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:48:00" visibility="undefined">
+            <owned-items>
+              <owned-item ref="e6502f5b5c7b4a6dab53100cd0f0c75d" />
+            </owned-items>
+            <attributes>
+              <attribute id="a2aec27873587411c8a9f11a155608271603" cid="PROP018" name="Circles" creation-date="05/16/2022 16:48:11" property-ref="e6502f5b5c7b4a6dab53100cd0f0c75d" />
+            </attributes>
+          </item>
+          <item id="e9014a3b1ca94de1a32f0ea70c1aa600" cid="GNR004" type="generalization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:42:02" from="1943fc881b7f43739b28ad8a6f324814" to="5815bdb751c44f2b87471468c9a48ad7" visibility="package" />
           <item id="20f9ffc2293b41fa9208d49d9f478f0d" cid="PROP002" type="property" name="y" style-class="" owner="3be9ef5c3c8941568b16dd5c379b7d82" creation-date="05/16/2022 14:54:27" visibility="private">
             <feature />
             <structural-feature type="" type-id="" />
             <property />
           </item>
-          <item id="de44726e01db4c1dbe089aae7d55a574" cid="GNR002" type="generalization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 15:13:56" from="5815bdb751c44f2b87471468c9a48ad7" to="3be9ef5c3c8941568b16dd5c379b7d82" visibility="package" />
-          <item id="0e83a3c20f2d4f8e9669d7e2c5479965" cid="PROP013" type="property" name="Circles" style-class="" owner="44da507e23194de08f86ac14e5c6c720" creation-date="05/16/2022 16:46:00" visibility="private">
+          <item id="75a7387122f7476c99080103b2d3377a" cid="REA001" type="realization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:48:40" from="2dd1012e221a4f2a849aaa724b70b191" to="1943fc881b7f43739b28ad8a6f324814" visibility="package" />
+          <item id="e6502f5b5c7b4a6dab53100cd0f0c75d" cid="PROP018" type="property" name="Circles" style-class="" owner="2dd1012e221a4f2a849aaa724b70b191" creation-date="05/16/2022 16:48:11" visibility="private">
             <feature />
             <structural-feature type="" type-id="" />
-            <property>
-              <source-codes>
-                <source-code language="" uid="scs-8d375b91-e691-4fef-bfa5-b01981611766" />
-              </source-codes>
-            </property>
+            <property />
           </item>
-          <item id="e6502f5b5c7b4a6dab53100cd0f0c75d" cid="PROP018" type="property" name="Circles" style-class="" owner="2dd1012e221a4f2a849aaa724b70b191" creation-date="05/16/2022 16:48:11" visibility="private">
+          <item id="8e5fb6ea124448b2ab2ae0a5426ee8de" cid="PROP006" type="property" name="x" style-class="" owner="8ccc5521612443f8b5845d14203a9904" creation-date="05/16/2022 16:35:09" visibility="private">
+            <feature />
+            <structural-feature type="" type-id="" />
+            <property />
+          </item>
+          <item id="de1fba6c13bc4d12bcd8774cadeff8cf" cid="PROP001" type="property" name="x" style-class="" owner="3be9ef5c3c8941568b16dd5c379b7d82" creation-date="05/16/2022 14:54:21" visibility="private">
             <feature />
             <structural-feature type="" type-id="" />
             <property />
@@ -424,6 +437,9 @@
               <owned-item ref="bcdefe2c73cd4d17bc0e8667ade85adb" />
               <owned-item ref="de1fba6c13bc4d12bcd8774cadeff8cf" />
               <owned-item ref="20f9ffc2293b41fa9208d49d9f478f0d" />
+              <owned-item ref="bcdefe2c73cd4d17bc0e8667ade85adb" />
+              <owned-item ref="20f9ffc2293b41fa9208d49d9f478f0d" />
+              <owned-item ref="de1fba6c13bc4d12bcd8774cadeff8cf" />
             </owned-items>
             <attributes>
               <attribute id="a54e37ddcd31e4466b8554c57096d9420789" cid="PROP001" name="x" creation-date="05/16/2022 14:54:21" property-ref="de1fba6c13bc4d12bcd8774cadeff8cf" />
@@ -502,35 +518,12 @@
               </operation>
             </operations>
           </item>
-          <item id="de43c387b7494e4893db0f081b9ccc4f" cid="GNR003" type="generalization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 15:19:46" from="8ccc5521612443f8b5845d14203a9904" to="5815bdb751c44f2b87471468c9a48ad7" visibility="package" />
-          <item id="1943fc881b7f43739b28ad8a6f324814" cid="C006" type="class" name="CircleIterator" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:42:02" visibility="undefined" />
-          <item id="44da507e23194de08f86ac14e5c6c720" cid="C007" type="class" name="CircleArray" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:42:26" visibility="undefined">
+          <item id="33dde7eb20ff4a5c8d533e5502a4b3d4" cid="C003" type="class" name="CIRCLE" style-class="" change-tracking-state="added" creation-date="05/16/2022 15:11:36" visibility="undefined">
             <owned-items>
-              <owned-item ref="0e83a3c20f2d4f8e9669d7e2c5479965" />
-              <owned-item ref="bf4540e144494a92b0446d68a0a452ea" />
-              <owned-item ref="647b74eae125468f89a7c1141b0f31f9" />
-              <owned-item ref="abab23f387644fc0809e32ddb565db94" />
-              <owned-item ref="9e5756c3fd2e4a4c978a166d291ffb08" />
-              <owned-item ref="0e83a3c20f2d4f8e9669d7e2c5479965" />
+              <owned-item ref="5b6d40497c9a485eb72ba173671be1a1" />
             </owned-items>
-            <attributes>
-              <attribute id="a368a85572b874d26af69a5faea27e56a776" cid="PROP013" name="Circles" creation-date="05/16/2022 16:46:00" property-ref="0e83a3c20f2d4f8e9669d7e2c5479965" />
-              <attribute id="a503b7d6b4ab1410b963aee95d331b03528" cid="PROP017" name="NewAttribute2" creation-date="05/16/2022 16:47:50" property-ref="9e5756c3fd2e4a4c978a166d291ffb08" />
-            </attributes>
           </item>
-          <item id="4812a9ec525b460ab795d2872774a651" cid="PROP010" type="property" name="value_angle" style-class="" owner="8ccc5521612443f8b5845d14203a9904" creation-date="05/16/2022 16:35:39" visibility="private">
-            <feature />
-            <structural-feature type="" type-id="" />
-            <property />
-          </item>
-          <item id="75a7387122f7476c99080103b2d3377a" cid="REA001" type="realization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:48:40" from="2dd1012e221a4f2a849aaa724b70b191" to="1943fc881b7f43739b28ad8a6f324814" visibility="package" />
-          <item id="7ab744605fa4411ba6cdaa2920317abb" cid="GNR006" type="generalization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:48:00" from="2dd1012e221a4f2a849aaa724b70b191" to="5815bdb751c44f2b87471468c9a48ad7" visibility="package" />
-          <item id="e50fdebfdc6e4c92b8b681f44c63cfab" cid="PROP007" type="property" name="y" style-class="" owner="8ccc5521612443f8b5845d14203a9904" creation-date="05/16/2022 16:35:13" visibility="private">
-            <feature />
-            <structural-feature type="" type-id="" />
-            <property />
-          </item>
-          <item id="9e5756c3fd2e4a4c978a166d291ffb08" cid="PROP017" type="property" name="NewAttribute2" style-class="" owner="44da507e23194de08f86ac14e5c6c720" creation-date="05/16/2022 16:47:50" visibility="private">
+          <item id="10b0b25db91548d3a9efb382affddd11" cid="PROP009" type="property" name="start_angle" style-class="" owner="8ccc5521612443f8b5845d14203a9904" creation-date="05/16/2022 16:35:20" visibility="private">
             <feature />
             <structural-feature type="" type-id="" />
             <property />
@@ -540,6 +533,23 @@
             <structural-feature type="" type-id="" />
             <property />
           </item>
+          <item id="44da507e23194de08f86ac14e5c6c720" cid="C007" type="class" name="CircleArray" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:42:26" visibility="undefined">
+            <owned-items>
+              <owned-item ref="0e83a3c20f2d4f8e9669d7e2c5479965" />
+              <owned-item ref="bf4540e144494a92b0446d68a0a452ea" />
+              <owned-item ref="647b74eae125468f89a7c1141b0f31f9" />
+              <owned-item ref="abab23f387644fc0809e32ddb565db94" />
+              <owned-item ref="9e5756c3fd2e4a4c978a166d291ffb08" />
+              <owned-item ref="0e83a3c20f2d4f8e9669d7e2c5479965" />
+              <owned-item ref="0e83a3c20f2d4f8e9669d7e2c5479965" />
+            </owned-items>
+            <attributes>
+              <attribute id="a368a85572b874d26af69a5faea27e56a776" cid="PROP013" name="Circles" creation-date="05/16/2022 16:46:00" property-ref="0e83a3c20f2d4f8e9669d7e2c5479965" />
+              <attribute id="a503b7d6b4ab1410b963aee95d331b03528" cid="PROP017" name="NewAttribute2" creation-date="05/16/2022 16:47:50" property-ref="9e5756c3fd2e4a4c978a166d291ffb08" />
+            </attributes>
+          </item>
+          <item id="1943fc881b7f43739b28ad8a6f324814" cid="C006" type="class" name="CircleIterator" style-class="" change-tracking-state="added" creation-date="05/16/2022 16:42:02" visibility="undefined" />
+          <item id="de43c387b7494e4893db0f081b9ccc4f" cid="GNR003" type="generalization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 15:19:46" from="8ccc5521612443f8b5845d14203a9904" to="5815bdb751c44f2b87471468c9a48ad7" visibility="package" />
           <item id="8ccc5521612443f8b5845d14203a9904" cid="C005" type="class" name="Sector" style-class="" change-tracking-state="added" creation-date="05/16/2022 15:19:46" visibility="undefined">
             <owned-items>
               <owned-item ref="8e5fb6ea124448b2ab2ae0a5426ee8de" />
@@ -550,6 +560,11 @@
               <owned-item ref="8e5fb6ea124448b2ab2ae0a5426ee8de" />
               <owned-item ref="4812a9ec525b460ab795d2872774a651" />
               <owned-item ref="e50fdebfdc6e4c92b8b681f44c63cfab" />
+              <owned-item ref="fcc13723dcaa41119f0b99f0e3ea7349" />
+              <owned-item ref="4812a9ec525b460ab795d2872774a651" />
+              <owned-item ref="e50fdebfdc6e4c92b8b681f44c63cfab" />
+              <owned-item ref="8e5fb6ea124448b2ab2ae0a5426ee8de" />
+              <owned-item ref="10b0b25db91548d3a9efb382affddd11" />
               <owned-item ref="fcc13723dcaa41119f0b99f0e3ea7349" />
             </owned-items>
             <attributes>
@@ -642,7 +657,8 @@
               </operation>
             </operations>
           </item>
-          <item id="10b0b25db91548d3a9efb382affddd11" cid="PROP009" type="property" name="start_angle" style-class="" owner="8ccc5521612443f8b5845d14203a9904" creation-date="05/16/2022 16:35:20" visibility="private">
+          <item id="de44726e01db4c1dbe089aae7d55a574" cid="GNR002" type="generalization" name="" style-class="" change-tracking-state="added" creation-date="05/16/2022 15:13:56" from="5815bdb751c44f2b87471468c9a48ad7" to="3be9ef5c3c8941568b16dd5c379b7d82" visibility="package" />
+          <item id="9e5756c3fd2e4a4c978a166d291ffb08" cid="PROP017" type="property" name="NewAttribute2" style-class="" owner="44da507e23194de08f86ac14e5c6c720" creation-date="05/16/2022 16:47:50" visibility="private">
             <feature />
             <structural-feature type="" type-id="" />
             <property />
@@ -721,7 +737,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="flowchart" id="pc9feaf3419d6435280a068565cfc6294_148937056" name="FlowchartDiagram1" order-index="3" overview-order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default">
+      <diagram type="flowchart" id="pc9feaf3419d6435280a068565cfc6294_148937056" name="FlowchartDiagram1" order-index="3" overview-order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="150,-12">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -733,83 +749,105 @@
           </authors>
           <description />
           <creation-date>06/28/2022 10:14:45</creation-date>
-          <change-date>06/28/2022 10:51:27</change-date>
+          <change-date>06/28/2022 11:25:49</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
         <abstract-items>
-          <item id="8daf2ca5cc4245e58762d85f135ec121" cid="FCF006" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:32:07" from="a9894fd158ab4b768af86b08c791da68" to="c9d97d76e10640deb5a50c6a32b9c030" />
-          <item id="55908c27714c4898b582c22b546eff0a" cid="FCP011" type="flowchart-process" name="6. Сохранить данные" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:43:04" />
-          <item id="abaf498b353b4431a3f95a6dcbc83445" cid="FCP006" type="flowchart-process" name="1. Точки&#xD;&#xA;Функция menu2&#xD;&#xA;(см. диаг. 3)" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:36:45" />
-          <item id="3c80af3a28a44faa88a22729a0ab7378" cid="FCF009" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:34:14" from="b38c9695fb43409785516f61845337e3" to="e6a4f43eda1548cd9a3bad7c45d3fa69" />
-          <item id="di1a6a1c52d8f84cc28198db601fd9a2af2855" cid="ELEM008" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
-            <drawing />
-          </item>
-          <item id="die6322ef75935498a898944afacda7f3b8205" cid="ELEM010" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
-            <drawing />
-          </item>
+          <item id="c9d97d76e10640deb5a50c6a32b9c030" cid="FCP005" type="flowchart-process" name="Действия по выбранному пункту меню&#xD;&#xA;(см. диаг. 2)" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:31:22" />
           <item id="a0f536fd0d25489bb33d9daa1b6b6460" cid="FCP002" type="flowchart-process" name="Инициализация переменных" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:19:22" />
-          <item id="diac3039165a82477cb99120f58555f6899973" cid="ELEM004" type="text" name="Text1" style-class="Transparent" change-tracking-state="added" creation-date="06/28/2022 10:34:26">
-            <style class="Transparent" />
-            <drawing-text>
-              <text>нет</text>
-            </drawing-text>
-          </item>
-          <item id="1da9e4db6a5c4fd494c4c1c1e2eba9ed" cid="FCP003" type="flowchart-process" name="Чтение данных из файлов" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:19:42" />
-          <item id="0d60fd4796e04f9186d4bcc3e1bdb360" cid="FCF007" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:33:06" from="c9d97d76e10640deb5a50c6a32b9c030" to="b38c9695fb43409785516f61845337e3" />
-          <item id="e88dab956c724aa6ac70f8885a6142b6" cid="FCF004" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:28:46" from="1da9e4db6a5c4fd494c4c1c1e2eba9ed" to="946c42628aa04b338bf90932b7818e5b" />
-          <item id="dbf4becbf75b4f56bcbbe22ab8d41732" cid="FCP013" type="flowchart-process" name="8. Выход" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:43:44" />
-          <item id="dic97e25851a5146e6ba9043617d1fa4c16480" cid="ELEM012" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
-            <drawing />
-          </item>
-          <item id="0446481f4cd14f69a47b74a20e6e8c89" cid="ELEM001" type="flowchart-start-end" name="Начало" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:15:34" />
-          <item id="7f2e8796933c49cc810f3778afc7efc7" cid="FCP024" type="flowchart-process" name="3. Переместить" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:49:07" />
-          <item id="a9894fd158ab4b768af86b08c791da68" cid="FCP004" type="flowchart-process" name="Вывод меню верхнего уровня&#xD;&#xA;menu_locale(n, language)&#xD;&#xA;Ввод переменной i" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:23:11" />
-          <item id="f8a5b0461fe44db89b16a2e540ac14d4" cid="FCF003" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:28:40" from="a0f536fd0d25489bb33d9daa1b6b6460" to="1da9e4db6a5c4fd494c4c1c1e2eba9ed" />
-          <item id="c69d84f29e2742b8856a80ebe133091f" cid="FCP022" type="flowchart-process" name="1. Добавить" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:48:36" />
-          <item id="b2da52fa04dd45838b4bf91787f1981a" cid="FCP026" type="flowchart-process" name="5. Удалить все" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:50:53" />
           <item id="c3e9ce87bc36459d9d5bf0cf6f0381fd" cid="ELEM003" type="text" name="Text1" style-class="Transparent" change-tracking-state="added" creation-date="06/28/2022 10:34:26">
             <style class="Transparent" />
             <drawing-text>
               <text>да</text>
             </drawing-text>
           </item>
+          <item id="di1a6a1c52d8f84cc28198db601fd9a2af2855" cid="ELEM008" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
+            <drawing />
+          </item>
+          <item id="a9894fd158ab4b768af86b08c791da68" cid="FCP004" type="flowchart-process" name="Вывод меню верхнего уровня&#xD;&#xA;menu_locale(n, language)&#xD;&#xA;Ввод переменной i" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:23:11" />
+          <item id="diac3039165a82477cb99120f58555f6899973" cid="ELEM004" type="text" name="Text1" style-class="Transparent" change-tracking-state="added" creation-date="06/28/2022 10:34:26">
+            <style class="Transparent" />
+            <drawing-text>
+              <text>нет</text>
+            </drawing-text>
+          </item>
+          <item id="di7187ee5973134341849225f8f93abf4c7098" cid="ELEM011" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
+            <drawing />
+          </item>
+          <item id="dibc48fbb696214be396b502bcdecf4bf62983" cid="CN004" type="comment-connector" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 11:25:49" from="di5587be78fbd64946a0e1db6e0714ce874763" />
+          <item id="die88195e74a7d47b9b089f8f5b77c15082862" cid="ELEM026" type="drawing-line" name="dib06724cd822c4fe2a5379f31da8c554d8727" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:51:50">
+            <drawing />
+          </item>
+          <item id="di2f10273486044cf5bbd363b408d869e82029" cid="ELEM028" type="drawing-line" name="dib06724cd822c4fe2a5379f31da8c554d8727" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:51:50">
+            <drawing />
+          </item>
+          <item id="di0df8f9f6a8f54229b2d9e6c0c470a5335848" cid="ELEM007" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
+            <drawing />
+          </item>
+          <item id="e6a4f43eda1548cd9a3bad7c45d3fa69" cid="ELEM002" type="flowchart-start-end" name="Конец" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:34:04" />
+          <item id="55908c27714c4898b582c22b546eff0a" cid="FCP011" type="flowchart-process" name="6. Сохранить данные" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:43:04" />
+          <item id="di1d33f5ce6de8453b8a94402a0f8ded0b3180" cid="ELEM009" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
+            <drawing />
+          </item>
+          <item id="0446481f4cd14f69a47b74a20e6e8c89" cid="ELEM001" type="flowchart-start-end" name="Начало" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:15:34" />
+          <item id="di54b3340479d54ca29572429323e4a1c86426" cid="ELEM029" type="drawing-line" name="dib06724cd822c4fe2a5379f31da8c554d8727" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:51:50">
+            <drawing />
+          </item>
+          <item id="4fe6d7d91a664b16a3feb49c98d34854" cid="FCP009" type="flowchart-process" name="4. Найти кластер кругов" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:39:43" />
+          <item id="6b255908888e4b81bc5ef6309f4f562e" cid="FCP027" type="flowchart-process" name="6. Предыдущее меню" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:51:03" />
+          <item id="di6eeab3b98200458690a64e8ba7ec28ab3360" cid="ELEM013" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
+            <drawing />
+          </item>
+          <item id="23c461ee32ac48569b313714911f1fbe" cid="FCF002" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:28:33" from="0446481f4cd14f69a47b74a20e6e8c89" to="a0f536fd0d25489bb33d9daa1b6b6460" />
+          <item id="ecbaf7a35f974f4899da8b7b94ddfc86" cid="FCP010" type="flowchart-process" name="5. Общая информация" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:42:40" />
+          <item id="di4423c6b3140c43fe94a247d4bcc002609440" cid="FCP007" type="flowchart-process" name="2. Круги&#xD;&#xA;Функция menu2&#xD;&#xA;(см. диаг. 3)" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:36:45" />
+          <item id="b2da52fa04dd45838b4bf91787f1981a" cid="FCP026" type="flowchart-process" name="5. Удалить все" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:50:53" />
+          <item id="9e4bfe5368734d8ebd154ec7872a9b0a" cid="FCP012" type="flowchart-process" name=" 7. Автотестирование" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:43:29" />
+          <item id="dic97e25851a5146e6ba9043617d1fa4c16480" cid="ELEM012" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
+            <drawing />
+          </item>
+          <item id="1da9e4db6a5c4fd494c4c1c1e2eba9ed" cid="FCP003" type="flowchart-process" name="Чтение данных из файлов" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:19:42" />
+          <item id="8daf2ca5cc4245e58762d85f135ec121" cid="FCF006" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:32:07" from="a9894fd158ab4b768af86b08c791da68" to="c9d97d76e10640deb5a50c6a32b9c030" />
+          <item id="die86f931bd730409f8c5352bf5099b58e4051" cid="CN002" type="comment-connector" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 11:25:34" from="abaf498b353b4431a3f95a6dcbc83445" />
+          <item id="b38c9695fb43409785516f61845337e3" cid="FCDC002" type="flowchart-decision" name="Выбран пункт выхода" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:32:27" />
+          <item id="2bd7699d35c14f148c615b59f6cae683" cid="FCF008" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:33:15" from="b38c9695fb43409785516f61845337e3" to="88b2caf91d49432f9ad583305ddf2afc" />
+          <item id="di5587be78fbd64946a0e1db6e0714ce874763" cid="FCP008" type="flowchart-process" name="3. Сектора&#xD;&#xA;Функция menu2&#xD;&#xA;(см. диаг. 3)" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:36:45" />
+          <item id="di4bfa465e1d1744a3845e5209d6e43e913272" cid="CN001" type="comment-connector" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 11:25:05" from="c9d97d76e10640deb5a50c6a32b9c030" to="Line1" />
+          <item id="di7675772587614128a55a711475b4f2ad5659" cid="ELEM027" type="drawing-line" name="dib06724cd822c4fe2a5379f31da8c554d8727" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:51:50">
+            <drawing />
+          </item>
+          <item id="0d60fd4796e04f9186d4bcc3e1bdb360" cid="FCF007" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:33:06" from="c9d97d76e10640deb5a50c6a32b9c030" to="b38c9695fb43409785516f61845337e3" />
+          <item id="Line4" cid="ELEM024" type="drawing-line" name="dib06724cd822c4fe2a5379f31da8c554d8727" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:51:50">
+            <drawing />
+          </item>
+          <item id="dbf4becbf75b4f56bcbbe22ab8d41732" cid="FCP013" type="flowchart-process" name="8. Выход" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:43:44" />
           <item id="Line3" cid="ELEM023" type="drawing-line" name="dia21ff567133e4b2e9437c5929a1b1ad98930" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:51:27">
             <drawing />
           </item>
           <item id="Line2" cid="ELEM006" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
             <drawing />
           </item>
+          <item id="28cab3558cb847fb862739666aed9828" cid="FCP023" type="flowchart-process" name="2. Показать все" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:48:46" />
           <item id="Line1" cid="ELEM005" type="drawing-line" name="di80f967bd227d44d591b462d7aaf9078a1373" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:04">
             <drawing />
           </item>
-          <item id="di0df8f9f6a8f54229b2d9e6c0c470a5335848" cid="ELEM007" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
+          <item id="f8a5b0461fe44db89b16a2e540ac14d4" cid="FCF003" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:28:40" from="a0f536fd0d25489bb33d9daa1b6b6460" to="1da9e4db6a5c4fd494c4c1c1e2eba9ed" />
+          <item id="abaf498b353b4431a3f95a6dcbc83445" cid="FCP006" type="flowchart-process" name="1. Точки&#xD;&#xA;Функция menu2&#xD;&#xA;(см. диаг. 3)" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:36:45" />
+          <item id="c69d84f29e2742b8856a80ebe133091f" cid="FCP022" type="flowchart-process" name="1. Добавить" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:48:36" />
+          <item id="e88dab956c724aa6ac70f8885a6142b6" cid="FCF004" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:28:46" from="1da9e4db6a5c4fd494c4c1c1e2eba9ed" to="946c42628aa04b338bf90932b7818e5b" />
+          <item id="3c80af3a28a44faa88a22729a0ab7378" cid="FCF009" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:34:14" from="b38c9695fb43409785516f61845337e3" to="e6a4f43eda1548cd9a3bad7c45d3fa69" />
+          <item id="di1063ee12688f402cb2386d665e9658d29623" cid="ELEM025" type="drawing-line" name="dib06724cd822c4fe2a5379f31da8c554d8727" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:51:50">
             <drawing />
           </item>
-          <item id="2bd7699d35c14f148c615b59f6cae683" cid="FCF008" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:33:15" from="b38c9695fb43409785516f61845337e3" to="88b2caf91d49432f9ad583305ddf2afc" />
-          <item id="di6eeab3b98200458690a64e8ba7ec28ab3360" cid="ELEM013" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
-            <drawing />
-          </item>
-          <item id="946c42628aa04b338bf90932b7818e5b" cid="FCP001" type="flowchart-process" name="Запрос языка интерфейса&#xD;&#xA;Ввод переменной language" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:17:00" />
-          <item id="28cab3558cb847fb862739666aed9828" cid="FCP023" type="flowchart-process" name="2. Показать все" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:48:46" />
-          <item id="c9d97d76e10640deb5a50c6a32b9c030" cid="FCP005" type="flowchart-process" name="Действия по выбранному пункту меню&#xD;&#xA;(см. диаг. 2)" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:31:22" />
-          <item id="di7187ee5973134341849225f8f93abf4c7098" cid="ELEM011" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
-            <drawing />
-          </item>
-          <item id="9a7b3dc85f844b439bb328f8163a3ff5" cid="FCP025" type="flowchart-process" name="4. Удалить по индексу" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:50:37" />
-          <item id="di1d33f5ce6de8453b8a94402a0f8ded0b3180" cid="ELEM009" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
-            <drawing />
-          </item>
-          <item id="e6a4f43eda1548cd9a3bad7c45d3fa69" cid="ELEM002" type="flowchart-start-end" name="Конец" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:34:04" />
-          <item id="di5587be78fbd64946a0e1db6e0714ce874763" cid="FCP008" type="flowchart-process" name="3. Сектора&#xD;&#xA;Функция menu2&#xD;&#xA;(см. диаг. 3)" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:36:45" />
-          <item id="4fe6d7d91a664b16a3feb49c98d34854" cid="FCP009" type="flowchart-process" name="4. Найти кластер кругов" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:39:43" />
-          <item id="di4423c6b3140c43fe94a247d4bcc002609440" cid="FCP007" type="flowchart-process" name="2. Круги&#xD;&#xA;Функция menu2&#xD;&#xA;(см. диаг. 3)" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:36:45" />
-          <item id="ecbaf7a35f974f4899da8b7b94ddfc86" cid="FCP010" type="flowchart-process" name="5. Общая информация" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:42:40" />
-          <item id="9e4bfe5368734d8ebd154ec7872a9b0a" cid="FCP012" type="flowchart-process" name=" 7. Автотестирование" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:43:29" />
-          <item id="b38c9695fb43409785516f61845337e3" cid="FCDC002" type="flowchart-decision" name="Выбран пункт выхода" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:32:27" />
+          <item id="dia1ec928c1fbb432d8f16b463a158aaca2501" cid="CN003" type="comment-connector" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 11:25:43" from="di4423c6b3140c43fe94a247d4bcc002609440" />
+          <item id="7f2e8796933c49cc810f3778afc7efc7" cid="FCP024" type="flowchart-process" name="3. Переместить" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:49:07" />
           <item id="88b2caf91d49432f9ad583305ddf2afc" cid="FCF005" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:28:54" from="946c42628aa04b338bf90932b7818e5b" to="a9894fd158ab4b768af86b08c791da68" />
-          <item id="23c461ee32ac48569b313714911f1fbe" cid="FCF002" type="flowchart-flow" name="" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:28:33" from="0446481f4cd14f69a47b74a20e6e8c89" to="a0f536fd0d25489bb33d9daa1b6b6460" />
-          <item id="6b255908888e4b81bc5ef6309f4f562e" cid="FCP027" type="flowchart-process" name="6. Предыдущее меню" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:51:03" />
+          <item id="9a7b3dc85f844b439bb328f8163a3ff5" cid="FCP025" type="flowchart-process" name="4. Удалить по индексу" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:50:37" />
+          <item id="946c42628aa04b338bf90932b7818e5b" cid="FCP001" type="flowchart-process" name="Запрос языка интерфейса&#xD;&#xA;Ввод переменной language" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:17:00" />
+          <item id="die6322ef75935498a898944afacda7f3b8205" cid="ELEM010" type="drawing-line" name="di562b21e26215489e9f48de07bae25a7c3645" style-class="" change-tracking-state="added" creation-date="06/28/2022 10:45:41">
+            <drawing />
+          </item>
         </abstract-items>
         <layer id="88153e8325a54aa693eb6cf8f2832de1" name="Default" visible="true" enabled="true" locked="false">
           <item id="0446481f4cd14f69a47b74a20e6e8c89" iid="16a7250ca3674778a188f847ea932d1c" creation-date="06/28/2022 10:15:34" order-index="0" type="entity">
@@ -941,39 +979,39 @@
             <layout ax="948" ay="641" awidth="150" aheight="60" x="948" y="641" width="150" height="60" />
           </item>
           <item id="Line1" iid="8a0f1e7f7318485aaa1082078bdf6843" creation-date="06/28/2022 10:45:04" order-index="23" type="entity">
-            <layout ax="894" ay="81" awidth="1" aheight="592" x="50" y="50" width="140" height="160" rotation-center="-897.5,-376.5" />
+            <layout ax="894" ay="81" awidth="1" aheight="592" x="0" y="-10" width="0" height="0" rotation-center="-897.5,-376.5" />
             <drawing-line start-point="894,81" end-point="894,672" />
           </item>
           <item id="Line2" iid="0aec69878c984b728f994845eef77b05" creation-date="06/28/2022 10:45:41" order-index="24" type="entity">
-            <layout ax="894" ay="81" awidth="53" aheight="1" x="50" y="50" width="140" height="160" />
+            <layout ax="894" ay="81" awidth="53" aheight="1" x="0" y="-10" width="0" height="0" />
             <drawing-line start-point="946,81" end-point="894,81" />
           </item>
           <item id="di0df8f9f6a8f54229b2d9e6c0c470a5335848" iid="6f03723b3ec748b793b6764c1ea8efbb" creation-date="06/28/2022 10:45:41" order-index="24" type="entity">
-            <layout ax="894" ay="176.1429" awidth="55" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-920.5,-81.5" />
+            <layout ax="894" ay="176.1429" awidth="55" aheight="1" x="0" y="-10" width="0" height="0" rotation-center="-920.5,-81.5" />
             <drawing-line start-point="948,176.1429" end-point="894,176.1429" />
           </item>
           <item id="di1a6a1c52d8f84cc28198db601fd9a2af2855" iid="a02c53eefaef4d22ada69622f494e5b8" creation-date="06/28/2022 10:45:41" order-index="24" type="entity">
-            <layout ax="894" ay="265.2857" awidth="55" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-920.5,-81.5" />
+            <layout ax="894" ay="265.2857" awidth="55" aheight="1" x="0" y="-10" width="0" height="0" rotation-center="-920.5,-81.5" />
             <drawing-line start-point="948,265.2857" end-point="894,265.2857" />
           </item>
           <item id="di1d33f5ce6de8453b8a94402a0f8ded0b3180" iid="07f35e475c8948e38f9a168d2f5c60fa" creation-date="06/28/2022 10:45:41" order-index="24" type="entity">
-            <layout ax="894" ay="346.4286" awidth="55" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-920.5,-81.5" />
+            <layout ax="894" ay="346.4286" awidth="55" aheight="1" x="0" y="-10" width="0" height="0" rotation-center="-920.5,-81.5" />
             <drawing-line start-point="948,346.4286" end-point="894,346.4286" />
           </item>
           <item id="die6322ef75935498a898944afacda7f3b8205" iid="243499c94e524353a3f4c9895fd303a4" creation-date="06/28/2022 10:45:41" order-index="24" type="entity">
-            <layout ax="894" ay="427.5714" awidth="55" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-900.5,-428.0714" />
+            <layout ax="894" ay="427.5714" awidth="55" aheight="1" x="0" y="-10" width="0" height="0" rotation-center="-900.5,-428.0714" />
             <drawing-line start-point="948,427.5714" end-point="894,427.5714" />
           </item>
           <item id="di7187ee5973134341849225f8f93abf4c7098" iid="e6fc4b31ea894a21a35af2c5c7cfdc9d" creation-date="06/28/2022 10:45:41" order-index="24" type="entity">
-            <layout ax="894" ay="508.7143" awidth="55" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-920.5,-81.5" />
+            <layout ax="894" ay="508.7142" awidth="55" aheight="1" x="0" y="-10" width="0" height="0" rotation-center="-920.5,-81.5" />
             <drawing-line start-point="948,508.7143" end-point="894,508.7143" />
           </item>
           <item id="dic97e25851a5146e6ba9043617d1fa4c16480" iid="94c0f5bcbe624f5e995edf9683374fd9" creation-date="06/28/2022 10:45:41" order-index="24" type="entity">
-            <layout ax="894" ay="589.8571" awidth="55" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-920.5,-81.5" />
+            <layout ax="894" ay="589.8571" awidth="55" aheight="1" x="0" y="-10" width="0" height="0" rotation-center="-920.5,-81.5" />
             <drawing-line start-point="948,589.8571" end-point="894,589.8571" />
           </item>
           <item id="di6eeab3b98200458690a64e8ba7ec28ab3360" iid="45dec4d51c9f4352bf8baf7caf92f02a" creation-date="06/28/2022 10:45:41" order-index="24" type="entity">
-            <layout ax="894" ay="671" awidth="55" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-920.5,-81.5" />
+            <layout ax="894" ay="671" awidth="55" aheight="1" x="0" y="-10" width="0" height="0" rotation-center="-920.5,-81.5" />
             <drawing-line start-point="948,671" end-point="894,671" />
           </item>
           <item id="c69d84f29e2742b8856a80ebe133091f" iid="901fc9c78ddf4875923ea88e15d629cc" creation-date="06/28/2022 10:48:36" order-index="25" type="entity">
@@ -995,8 +1033,68 @@
             <layout ax="1281" ay="478.7142" awidth="150" aheight="59.99997" x="1281" y="478.7142" width="150" height="60" />
           </item>
           <item id="Line3" iid="a31ae4a6e95e4d84be6480baeca7dee7" creation-date="06/28/2022 10:51:27" order-index="31" type="entity">
-            <layout ax="1222" ay="81" awidth="6" aheight="428.7143" x="50" y="50" width="140" height="160" rotation-center="-1238,-302" />
-            <drawing-line start-point="1222,81" end-point="1227,508.7143" />
+            <layout ax="1222" ay="96" awidth="1" aheight="413.7143" x="50" y="50" width="140" height="160" rotation-center="-1222.5,-302.8571" />
+            <drawing-line start-point="1222,96" end-point="1222,508.7143" />
+          </item>
+          <item id="Line4" iid="f27502a4f1c543a3a1388316834433e9" creation-date="06/28/2022 10:51:50" order-index="32" type="entity">
+            <layout ax="1222" ay="96" awidth="60" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-1252,-96.5" />
+            <drawing-line start-point="1281,96" end-point="1222,96" />
+          </item>
+          <item id="di1063ee12688f402cb2386d665e9658d29623" iid="f1170f023f9448e9a33a43283e6b8559" creation-date="06/28/2022 10:51:50" order-index="32" type="entity">
+            <layout ax="1222" ay="176.6429" awidth="60" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-1252,-96.5" />
+            <drawing-line start-point="1281,176.6429" end-point="1222,176.6429" />
+          </item>
+          <item id="die88195e74a7d47b9b089f8f5b77c15082862" iid="3a7e5e81fb2745a1904f0b607627e379" creation-date="06/28/2022 10:51:50" order-index="32" type="entity">
+            <layout ax="1222" ay="261.0857" awidth="60" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-1252,-96.5" />
+            <drawing-line start-point="1281,261.0857" end-point="1222,261.0857" />
+          </item>
+          <item id="di7675772587614128a55a711475b4f2ad5659" iid="2512c7b7cb6a49f78ddf34f1d3cf1ada" creation-date="06/28/2022 10:51:50" order-index="32" type="entity">
+            <layout ax="1222" ay="346.9286" awidth="60" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-1252,-96.5" />
+            <drawing-line start-point="1281,346.9286" end-point="1222,346.9286" />
+          </item>
+          <item id="di2f10273486044cf5bbd363b408d869e82029" iid="5d93044c10e94f6f886b9cf87aa88257" creation-date="06/28/2022 10:51:50" order-index="32" type="entity">
+            <layout ax="1222" ay="426.1714" awidth="60" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-1252,-426.6714" />
+            <drawing-line start-point="1281,426.1714" end-point="1222,426.1714" />
+          </item>
+          <item id="di54b3340479d54ca29572429323e4a1c86426" iid="53ca50b32b814b868cd808e80204d4f9" creation-date="06/28/2022 10:51:50" order-index="32" type="entity">
+            <layout ax="1222" ay="509.2143" awidth="60" aheight="1" x="50" y="50" width="140" height="160" rotation-center="-1252,-96.5" />
+            <drawing-line start-point="1281,509.2143" end-point="1222,509.2143" />
+          </item>
+          <item id="di4bfa465e1d1744a3845e5209d6e43e913272" iid="36b3c1041c7d4abe84aead107b73eec1" creation-date="06/28/2022 11:25:05" order-index="33" type="comment-connector">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="750" y1="551" x2="894" y2="362" start-border-pos="0.370833333333333" end-border-pos="0.881334459459459" start-local-pos="29" end-local-pos="281" name-position="0,20">
+              <points>
+                <point x="750" y="551" />
+                <point x="894" y="362" />
+              </points>
+            </layout>
+            <relation from="c9d97d76e10640deb5a50c6a32b9c030" from-iid="af220cd6e52f4236b55e4e7e0c570157" to="Line1" to-iid="8a0f1e7f7318485aaa1082078bdf6843" />
+          </item>
+          <item id="die86f931bd730409f8c5352bf5099b58e4051" iid="937d990feb9c4a49a844bafbb6d7fc70" creation-date="06/28/2022 11:25:34" order-index="34" type="comment-connector">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1098" y1="81" x2="1222" y2="303" start-border-pos="0.381578947368421" end-border-pos="0.928694752884022" start-local-pos="40" end-local-pos="118" name-position="0,21">
+              <points>
+                <point x="1098" y="81" />
+                <point x="1222" y="303" />
+              </points>
+            </layout>
+            <relation from="abaf498b353b4431a3f95a6dcbc83445" from-iid="5131cf73ed3f495dbaf0fcd7db37c2af" />
+          </item>
+          <item id="dia1ec928c1fbb432d8f16b463a158aaca2501" iid="3f834b61d5da45dc9af0e5af0a68922b" creation-date="06/28/2022 11:25:43" order-index="35" type="comment-connector">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1098" y1="177" x2="1222" y2="303" start-border-pos="0.377819412632992" end-border-pos="0.929299034639242" start-local-pos="38.8571" end-local-pos="117" name-position="0,20">
+              <points>
+                <point x="1098" y="177" />
+                <point x="1222" y="303" />
+              </points>
+            </layout>
+            <relation from="di4423c6b3140c43fe94a247d4bcc002609440" from-iid="83c934301a684bceacf7cadb0a06b771" />
+          </item>
+          <item id="dibc48fbb696214be396b502bcdecf4bf62983" iid="09a72c2f84d44a5a8ead74ddcbf433b9" creation-date="06/28/2022 11:25:49" order-index="36" type="comment-connector">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1098" y1="260" x2="1222" y2="303" start-border-pos="0.352976226806641" end-border-pos="0.928253528357795" start-local-pos="24.71429" end-local-pos="118" name-position="0,20">
+              <points>
+                <point x="1098" y="260" />
+                <point x="1222" y="303" />
+              </points>
+            </layout>
+            <relation from="di5587be78fbd64946a0e1db6e0714ce874763" from-iid="2776430f6157471a8eb976b1eb943da9" />
           </item>
         </layer>
       </diagram>
